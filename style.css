@@ -3,51 +3,54 @@ body {
   padding: 20px;
 }
 
-h1, h2 {
-  margin-bottom: 10px;
+h1, h2, h3 {
+  margin-top: 25px;
 }
 
-#ipa-chart {
-  border: 1px solid #ccc;
-  padding: 15px;
+.note {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.ipa-table {
+  border-collapse: collapse;
   margin-bottom: 20px;
+  width: 100%;
 }
 
-.ipa-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
+.ipa-table th,
+.ipa-table td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
 }
 
-.ipa-label {
-  width: 120px;
-  font-weight: bold;
+.ipa-table td {
+  font-size: 20px;
 }
 
 .ipa-symbol {
-  font-size: 22px;
-  margin-right: 10px;
   cursor: pointer;
-  color: #ccc; /* inactive */
+  color: #ccc;
   user-select: none;
 }
 
 .ipa-symbol.active {
-  color: #000;
+  color: black;
 }
 
 .ipa-symbol.used-active {
-  color: green;
+  color: green !important;
 }
 
 .ipa-symbol.used-inactive {
-  color: red;
+  color: red !important;
 }
 
 #input-area {
   display: flex;
-  align-items: flex-start;
   gap: 10px;
+  align-items: flex-start;
 }
 
 .input-box {
@@ -56,8 +59,8 @@ h1, h2 {
 }
 
 textarea {
-  width: 250px;
-  height: 100px;
+  width: 260px;
+  height: 90px;
   font-size: 16px;
 }
 
