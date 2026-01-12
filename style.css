@@ -1,194 +1,315 @@
-/* =========================
-   GLOBAL RESET & BASE
-========================= */
-
-* {
-  box-sizing: border-box;
+/* === Top Links and Buttons === */
+a#keyboardLink {
+	position: fixed;
+	top: 0;
+	right: 0;
+	text-decoration: none;
+	padding: 4px 6px;
+	border: 1px solid #000;
+	background-color: #fff;
+	color: #000;
+	z-index: 200;
+	font-size: 10pt;
+	transition: 0.2s;
+}
+a#keyboardLink:hover {
+	color: #000;
+	background-color: #ff0;
 }
 
+#loadFontBtn {
+	float: right;
+	font-size: 9pt;
+}
+
+/* === Body Fonts === */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 20px;
-  background-color: #ffffff;
-  color: #000;
+	font-family: "Charis SIL", "Doulos SIL", Gentium, "Arial Unicode MS", "Lucida Sans Unicode", Arial, Serif;
+	font-size: 16px;
+	line-height: 1.4;
 }
 
-h1, h2, h3 {
-  margin: 10px 0;
-  font-weight: bold;
+/* === Titles and Headings === */
+h1#title {
+	text-align: center;
+	font-size: 18pt;
+	margin-bottom: 4px;
+}
+h1#title #updateDate {
+	color: red;
 }
 
-section {
-  margin-bottom: 32px;
+h2 {
+	font-size: 13pt;
+	margin-bottom: 4px;
 }
 
-/* =========================
-   TABLES (IPA CHARTS)
-========================= */
-
+/* === Tables === */
 table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid #bbb;
-  padding: 6px;
-  text-align: center;
-  vertical-align: middle;
-  min-width: 48px;
+	border-collapse: collapse;
+	padding: 0;
+	empty-cells: show;
+	border-spacing: 0;
+	width: 100%;
 }
 
 th {
-  background-color: #f2f2f2;
-  font-weight: bold;
+	font-weight: normal;
+	text-align: left;
+	padding: 2px 4px;
 }
 
-td.impossible {
-  background-color: #e6e6e6;
+td {
+	font-size: 20pt;
+	text-align: center;
+	padding: 2px 4px;
 }
 
-/* =========================
-   IPA SYMBOL STATES
-========================= */
-
-.ipa-symbol {
-  font-size: 20px;
-  cursor: pointer;
-  user-select: none;
-  color: #ccc;              /* inactive */
-  transition: color 0.15s ease;
+/* Smaller text for revisions or notes */
+#alphabetRevision {
+	font-size: smaller;
 }
 
-/* Active but unused */
-.ipa-symbol.active {
-  color: #000;
+/* IPA Symbols */
+span.ipa {
+	font-size: 20pt;
 }
 
-/* Active and found in pronunciation */
-.ipa-symbol.used-active {
-  color: green;
-  font-weight: bold;
+/* === Pulmonic Consonants === */
+#pulmonicConsonants {
+	margin-bottom: 1.5em;
+}
+#pulmonicConsonants h2 {
+	margin-top: 5px;
+}
+#pulmonicConsonants table,
+#pulmonicConsonants td,
+#pulmonicConsonants th {
+	border: 1px solid #777;
+	vertical-align: middle;
 }
 
-/* Inactive but found in pronunciation */
-.ipa-symbol.used-inactive {
-  color: red;
-  font-weight: bold;
+#pulmonicConsonants th.place {
+	width: 8%;
+	text-align: center;
+}
+#pulmonicConsonants th.manner {
+	text-align: left;
+	padding: 0 3px;
+	width: 8%;
+}
+#pulmonicConsonants td .voiceless,
+#vowels td.unrounded {
+	float: left;
+	width: 49.5%;
+	padding: 0;
+}
+#pulmonicConsonants td .voiced,
+#vowels td.rounded {
+	float: right;
+	width: 49.5%;
+	padding: 0;
+}
+#pulmonicConsonants .impossible {
+	background-color: #aaa;
+	color: black;
+}
+#pulmonicConsonants span.impossible {
+	border-left: 1px solid #777;
+	width: 48%;
+	display: inline-block;
 }
 
-/* =========================
-   IPA ROW LABELS
-========================= */
-
-.ipa-label {
-  text-align: left;
-  font-weight: bold;
-  padding-right: 8px;
-  white-space: nowrap;
+/* === Non-Pulmonic Consonants === */
+#nonPulmonicConsonants {
+	clear: left;
+	float: left;
+	width: 47%;
+	margin-bottom: 2em;
+}
+#nonPulmonicConsonants table {
+	border: 1px solid #777;
+	width: 100%;
+}
+#nonPulmonicConsonants colgroup {
+	border-left: 1px solid #777;
+	border-right: 1px solid #777;
+}
+#nonPulmonicConsonants thead th {
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 11pt;
+	text-align: center;
+}
+#nonPulmonicConsonants tbody th {
+	font-size: 10pt;
+	text-align: left;
+	padding: 1px .75ex;
+}
+#nonPulmonicConsonants tbody td {
+	font-size: 20pt;
+	text-align: center;
+	padding: 1px .75ex;
+}
+#nonPulmonicConsonants th {
+	padding: .4em;
+	border-right: 1px solid #777;
+}
+#nonPulmonicConsonants td {
+	padding: .4em;
+	border-left: 1px solid #777;
 }
 
-/* =========================
-   INPUT AREA
-========================= */
-
-#input-area {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+/* === Vowel Quadrilateral === */
+#vowels {
+	float: right;
+	width: 45%;
+	margin-bottom: 2em;
 }
 
-#input-area > div {
-  display: flex;
-  flex-direction: column;
+div#vowelQuadrilateral {
+	position: relative;
+	font-size: 1em;
+	width: 100%;
+	height: 310px;
 }
 
-label {
-  font-weight: bold;
-  margin-bottom: 4px;
+div#vowelQuadrilateral span {
+	position: absolute;
+	z-index: 100;
+	font-size: 20pt;
 }
 
-textarea {
-  width: 260px;
-  height: 120px;
-  font-size: 16px;
-  padding: 6px;
-  resize: vertical;
-  font-family: inherit;
+/* Optional background image for chart */
+img#vowelBackground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
-button {
-  height: 40px;
-  margin-top: 22px;
-  padding: 0 18px;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #555;
-  background-color: #f2f2f2;
+div#vowelSymbols span,
+#Vowels td {
+	font-size: 20pt;
+	padding: 0 5px;
 }
 
-button:hover {
-  background-color: #e0e0e0;
+#vowels p.caption {
+	margin-top: .25em;
+	margin-left: 25%;
 }
 
-/* =========================
-   VOWEL QUADRILATERAL
-========================= */
-
-#vowelQuadrilateral {
-  position: relative;
-  width: 600px;
-  max-width: 100%;
-  margin: 20px auto;
+/* === Other Symbols === */
+div#otherSymbols {
+	clear: left;
+	float: left;
+	width: 60%;
+	margin-bottom: 2em;
+}
+div#otherSymbols table td,
+div#otherSymbols table th {
+	font-size: 20pt;
+	padding: 0 5px;
+}
+div#otherSymbols table th {
+	text-align: left;
+	font-size: 10pt;
+	width: 50%;
+}
+div#otherSymbols table td.firstOfTwoExamples {
+	padding-right: 0;
+}
+div#otherSymbols table td.secondOfTwoExamples {
+	padding-left: .25em;
 }
 
-#vowelQuadrilateral img {
-  width: 100%;
-  display: block;
+/* === Suprasegmentals === */
+div#suprasegmentals {
+	float: right;
+	margin-bottom: 2em;
+}
+div#suprasegmentals td,
+div#suprasegmentals th {
+	font-size: 20pt;
+	padding: 0 .5ex;
+}
+div#suprasegmentals td.symbol {
+	text-align: center;
+}
+div#suprasegmentals td.example {
+	text-align: left;
+}
+div#suprasegmentals td#stressExample {
+	text-align: right;
 }
 
-.vowel {
-  position: absolute;
-  font-size: 20px;
-  transform: translate(-50%, -50%);
+/* === Diacritics === */
+div#diacritics {
+	width: 70%;
+	clear: left;
+	float: left;
+	margin-bottom: 1em;
+}
+div#diacritics table {
+	border: 1px solid #777;
+	width: 100%;
+}
+div#diacritics table td,
+div#diacritics table th {
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+	font-size: 20pt;
+	padding: 3px .5ex;
+	text-align: center;
+	white-space: pre;
+}
+div#diacritics td.leftExample {
+	padding-right: .2ex;
+}
+div#diacritics td.rightExample {
+	padding-left: .2ex;
+}
+div#diacritics th {
+	font-size: 10pt;
+	padding: 3px;
 }
 
-/* =========================
-   UNICODE TABLE
-========================= */
-
-table td span.ipa-symbol {
-  display: inline-block;
-  min-width: 24px;
+/* === Tones and Word Accents === */
+div#tonesAndWordAccents {
+	clear: right;
+	float: right;
+	margin-bottom: 1em;
+}
+div#tonesAndWordAccents h2 {
+	text-align: center;
+	white-space: nowrap;
+}
+div#tonesAndWordAccents td,
+div#tonesAndWordAccents th {
+	font-size: 20pt;
+	text-align: center;
+}
+div#tonesAndWordAccents thead th {
+	text-align: center;
+	font-weight: bold;
+	padding: 3px;
+}
+div#tonesAndWordAccents tbody th {
+	padding: 0px 2ex;
+	text-align: left;
+	font-size: 10pt;
+}
+div#tonesAndWordAccents tbody th.or {
+	padding: 0px 2px;
+	font-size: 8pt;
+	vertical-align: middle;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
+/* === Footer === */
+div#footer {
+	font-family: "Arial Unicode MS", "Lucida Sans Unicode", Arial, Helvetica, Sans-Serif;
+	clear: both;
 }
-
-/* =========================
-   RESPONSIVE ADJUSTMENTS
-========================= */
-
-@media (max-width: 700px) {
-  textarea {
-    width: 100%;
-  }
-
-  #input-area {
-    flex-direction: column;
-  }
-
-  #vowelQuadrilateral {
-    width: 100%;
-  }
+div#footer p {
+	margin-top: 0;
+	margin-bottom: .5em;
 }
