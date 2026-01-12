@@ -1,71 +1,194 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  background-color: #ffffff;
+  color: #000;
 }
 
 h1, h2, h3 {
-  margin-top: 25px;
+  margin: 10px 0;
+  font-weight: bold;
 }
 
-.note {
-  font-size: 0.9em;
-  color: #555;
+section {
+  margin-bottom: 32px;
 }
 
-.ipa-table {
+/* =========================
+   TABLES (IPA CHARTS)
+========================= */
+
+table {
   border-collapse: collapse;
-  margin-bottom: 20px;
   width: 100%;
+  margin-top: 10px;
 }
 
-.ipa-table th,
-.ipa-table td {
-  border: 1px solid #ccc;
+th, td {
+  border: 1px solid #bbb;
   padding: 6px;
   text-align: center;
+  vertical-align: middle;
+  min-width: 48px;
 }
 
-.ipa-table td {
-  font-size: 20px;
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
+
+td.impossible {
+  background-color: #e6e6e6;
+}
+
+/* =========================
+   IPA SYMBOL STATES
+========================= */
 
 .ipa-symbol {
+  font-size: 20px;
   cursor: pointer;
-  color: #ccc;
   user-select: none;
+  color: #ccc;              /* inactive */
+  transition: color 0.15s ease;
 }
 
+/* Active but unused */
 .ipa-symbol.active {
-  color: black;
+  color: #000;
 }
 
+/* Active and found in pronunciation */
 .ipa-symbol.used-active {
-  color: green !important;
+  color: green;
+  font-weight: bold;
 }
 
+/* Inactive but found in pronunciation */
 .ipa-symbol.used-inactive {
-  color: red !important;
+  color: red;
+  font-weight: bold;
 }
+
+/* =========================
+   IPA ROW LABELS
+========================= */
+
+.ipa-label {
+  text-align: left;
+  font-weight: bold;
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+/* =========================
+   INPUT AREA
+========================= */
 
 #input-area {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.input-box {
+#input-area > div {
   display: flex;
   flex-direction: column;
 }
 
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
 textarea {
   width: 260px;
-  height: 90px;
+  height: 120px;
   font-size: 16px;
+  padding: 6px;
+  resize: vertical;
+  font-family: inherit;
 }
 
 button {
   height: 40px;
   margin-top: 22px;
+  padding: 0 18px;
+  font-size: 16px;
   cursor: pointer;
+  border: 1px solid #555;
+  background-color: #f2f2f2;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* =========================
+   VOWEL QUADRILATERAL
+========================= */
+
+#vowelQuadrilateral {
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+#vowelQuadrilateral img {
+  width: 100%;
+  display: block;
+}
+
+.vowel {
+  position: absolute;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+   UNICODE TABLE
+========================= */
+
+table td span.ipa-symbol {
+  display: inline-block;
+  min-width: 24px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+========================= */
+
+@media (max-width: 700px) {
+  textarea {
+    width: 100%;
+  }
+
+  #input-area {
+    flex-direction: column;
+  }
+
+  #vowelQuadrilateral {
+    width: 100%;
+  }
 }
