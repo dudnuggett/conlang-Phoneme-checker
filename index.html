@@ -1,58 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Conlang IPA Checker</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <h1>Conlang IPA Pronunciation Checker</h1>
 
-<section id="ipa-chart">
-  <h2>IPA Chart</h2>
+<!-- ================= IPA CHART ================= -->
 
-  <!-- Example: Pulmonic consonants (partial starter set) -->
-  <div class="ipa-row">
-    <span class="ipa-label">Plosive</span>
-    <span class="ipa-symbol" data-symbol="p">p</span>
-    <span class="ipa-symbol" data-symbol="b">b</span>
-    <span class="ipa-symbol" data-symbol="t">t</span>
-    <span class="ipa-symbol" data-symbol="d">d</span>
-    <span class="ipa-symbol" data-symbol="k">k</span>
-    <span class="ipa-symbol" data-symbol="g">g</span>
-  </div>
+<div id="chart" class="ipa-chart">
 
-  <div class="ipa-row">
-    <span class="ipa-label">Nasal</span>
-    <span class="ipa-symbol" data-symbol="m">m</span>
-    <span class="ipa-symbol" data-symbol="n">n</span>
-    <span class="ipa-symbol" data-symbol="ŋ">ŋ</span>
-  </div>
+<h2>International Phonetic Alphabet</h2>
+<p class="note">
+Based on Weston Ruter’s Unicode IPA chart (GPL).
+Click symbols to activate/deactivate them.
+</p>
 
-  <div class="ipa-row">
-    <span class="ipa-label">Vowels</span>
-    <span class="ipa-symbol" data-symbol="i">i</span>
-    <span class="ipa-symbol" data-symbol="e">e</span>
-    <span class="ipa-symbol" data-symbol="a">a</span>
-    <span class="ipa-symbol" data-symbol="o">o</span>
-    <span class="ipa-symbol" data-symbol="u">u</span>
-  </div>
+<!-- ================= CONSONANTS (PULMONIC) ================= -->
 
-</section>
+<h3>Consonants (Pulmonic)</h3>
+
+<table class="ipa-table">
+<thead>
+<tr>
+<th></th>
+<th>Bilabial</th>
+<th>Labiodental</th>
+<th>Dental</th>
+<th>Alveolar</th>
+<th>Postalveolar</th>
+<th>Retroflex</th>
+<th>Palatal</th>
+<th>Velar</th>
+<th>Uvular</th>
+<th>Pharyngeal</th>
+<th>Glottal</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<th>Plosive</th>
+<td>p b</td>
+<td></td>
+<td></td>
+<td>t d</td>
+<td></td>
+<td>ʈ ɖ</td>
+<td>c ɟ</td>
+<td>k ɡ</td>
+<td>q ɢ</td>
+<td></td>
+<td>ʔ</td>
+</tr>
+
+<tr>
+<th>Nasal</th>
+<td>m</td>
+<td>ɱ</td>
+<td></td>
+<td>n</td>
+<td></td>
+<td>ɳ</td>
+<td>ɲ</td>
+<td>ŋ</td>
+<td>ɴ</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<th>Trill</th>
+<td>ʙ</td>
+<td></td>
+<td></td>
+<td>r</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>ʀ</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<th>Tap / Flap</th>
+<td></td>
+<td>ⱱ</td>
+<td></td>
+<td>ɾ</td>
+<td></td>
+<td>ɽ</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<th>Fricative</th>
+<td>ɸ β</td>
+<td>f v</td>
+<td>θ ð</td>
+<td>s z</td>
+<td>ʃ ʒ</td>
+<td>ʂ ʐ</td>
+<td>ç ʝ</td>
+<td>x ɣ</td>
+<td>χ ʁ</td>
+<td>ħ ʕ</td>
+<td>h ɦ</td>
+</tr>
+
+<tr>
+<th>Lateral fricative</th>
+<td></td>
+<td></td>
+<td></td>
+<td>ɬ ɮ</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<th>Approximant</th>
+<td></td>
+<td>ʋ</td>
+<td></td>
+<td>ɹ</td>
+<td></td>
+<td>ɻ</td>
+<td>j</td>
+<td>ɰ</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<th>Lateral approximant</th>
+<td></td>
+<td></td>
+<td></td>
+<td>l</td>
+<td></td>
+<td>ɭ</td>
+<td>ʎ</td>
+<td>ʟ</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+<!-- ================= NON-PULMONIC ================= -->
+
+<h3>Consonants (Non-Pulmonic)</h3>
+
+<table class="ipa-table">
+<tr><th>Clicks</th><td>ʘ ǀ ǃ ǂ ǁ</td></tr>
+<tr><th>Implosives</th><td>ɓ ɗ ʄ ɠ ʛ</td></tr>
+<tr><th>Ejectives</th><td>pʼ tʼ kʼ sʼ</td></tr>
+</table>
+
+<!-- ================= VOWELS ================= -->
+
+<h3>Vowels</h3>
+
+<table class="ipa-table">
+<tr><th>Close</th><td>i y ɨ ʉ ɯ u</td></tr>
+<tr><th>Near-close</th><td>ɪ ʏ ʊ</td></tr>
+<tr><th>Close-mid</th><td>e ø ɘ ɵ ɤ o</td></tr>
+<tr><th>Mid</th><td>ə</td></tr>
+<tr><th>Open-mid</th><td>ɛ œ ɜ ɞ ʌ ɔ</td></tr>
+<tr><th>Near-open</th><td>æ ɐ</td></tr>
+<tr><th>Open</th><td>a ɶ ɑ ɒ</td></tr>
+</table>
+
+<!-- ================= SUPRASEGMENTALS ================= -->
+
+<h3>Suprasegmentals</h3>
+<p>ˈ ˌ ː ˑ | ‖ . ‿</p>
+
+<!-- ================= DIACRITICS ================= -->
+
+<h3>Diacritics</h3>
+<p>◌̥ ◌̬ ◌ʰ ◌ʷ ◌ʲ ◌ˠ ◌ˤ ◌̃ ◌̩ ◌̯ ◌̚</p>
+
+<!-- ================= TONES ================= -->
+
+<h3>Tones & Accents</h3>
+<p>˥ ˦ ˧ ˨ ˩ ˥˩ ˩˥ ↗ ↘</p>
+
+</div>
+
+<!-- ================= INPUT AREA ================= -->
 
 <section id="input-area">
   <div class="input-box">
-    <label for="latin">Latin box</label>
-    <textarea id="latin" placeholder="Enter Latin spelling here..."></textarea>
+    <label>Latin box</label>
+    <textarea></textarea>
   </div>
 
   <div class="input-box">
-    <label for="pronunciation">Pronunciation box</label>
-    <textarea id="pronunciation" placeholder="Enter IPA pronunciation here..."></textarea>
+    <label>Pronunciation box</label>
+    <textarea id="pronunciation"></textarea>
   </div>
 
   <button id="check-btn">Check</button>
+</section>
+
+<!-- ================= EXTRA UNICODE IPA ================= -->
+
+<section id="extra-ipa">
+<h2>Unicode IPA Symbols Not on the Official IPA Chart</h2>
+
+<table class="ipa-table">
+<tr><th>Symbol</th><th>Definition</th></tr>
+<tr><td>ɚ</td><td>Rhotacized schwa</td></tr>
+<tr><td>ɝ</td><td>Rhotacized open-mid central vowel</td></tr>
+<tr><td>ʣ</td><td>Voiced alveolar affricate</td></tr>
+<tr><td>ʤ</td><td>Voiced postalveolar affricate</td></tr>
+<tr><td>ʥ</td><td>Voiced alveolo-palatal affricate</td></tr>
+<tr><td>ʦ</td><td>Voiceless alveolar affricate</td></tr>
+<tr><td>ʧ</td><td>Voiceless postalveolar affricate</td></tr>
+<tr><td>ʨ</td><td>Voiceless alveolo-palatal affricate</td></tr>
+<tr><td>ɫ</td><td>Velarized alveolar lateral approximant</td></tr>
+<tr><td>ʱ</td><td>Breathy voiced</td></tr>
+<tr><td>ˀ</td><td>Glottal stop</td></tr>
+<tr><td>o̢</td><td>Retroflexion</td></tr>
+<tr><td>o᷆</td><td>Mid-low falling tone</td></tr>
+<tr><td>o᷇</td><td>High-mid falling tone</td></tr>
+<tr><td>o᷈</td><td>Falling-rising tone</td></tr>
+</table>
 </section>
 
 <script src="script.js"></script>
