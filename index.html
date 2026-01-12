@@ -1,29 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Conlang IPA Checker</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Conlang IPA Pronunciation Checker</title>
+
+<style>
+/* =======================
+   GLOBAL STYLES
+======================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+.impossible {
+  background: #eaeaea;
+}
+
+/* =======================
+   IPA SYMBOL STATES
+======================= */
+.ipa-symbol {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ccc; /* inactive */
+  user-select: none;
+}
+
+.ipa-symbol.active {
+  color: #000;
+}
+
+.ipa-symbol.used-active {
+  color: green;
+}
+
+.ipa-symbol.used-inactive {
+  color: red;
+}
+
+/* =======================
+   INPUT AREA
+======================= */
+#input-area {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+textarea {
+  width: 260px;
+  height: 120px;
+  font-size: 16px;
+}
+
+button {
+  height: 40px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+/* =======================
+   VOWELS
+======================= */
+#vowelQuadrilateral {
+  position: relative;
+  width: 600px;
+  margin: 20px auto;
+}
+
+#vowelQuadrilateral img {
+  width: 100%;
+}
+
+.vowel {
+  position: absolute;
+  font-size: 20px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Conlang IPA Pronunciation Checker</h1>
 
-<!-- ================= IPA CHART ================= -->
-
-<div id="chart" class="ipa-chart">
-
-<h2>International Phonetic Alphabet</h2>
-<p class="note">
-Based on Weston Ruter’s Unicode IPA chart (GPL).
-Click symbols to activate/deactivate them.
-</p>
-
-<!-- ================= CONSONANTS (PULMONIC) ================= -->
+<!-- =======================
+     IPA CHART
+======================= -->
+<section>
+<h2>IPA Chart</h2>
 
 <h3>Consonants (Pulmonic)</h3>
-
-<table class="ipa-table">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -44,209 +145,218 @@ Click symbols to activate/deactivate them.
 
 <tr>
 <th>Plosive</th>
-<td>p b</td>
+<td><span class="ipa-symbol" data-symbol="p">p</span> <span class="ipa-symbol" data-symbol="b">b</span></td>
 <td></td>
 <td></td>
-<td>t d</td>
+<td><span class="ipa-symbol" data-symbol="t">t</span> <span class="ipa-symbol" data-symbol="d">d</span></td>
 <td></td>
-<td>ʈ ɖ</td>
-<td>c ɟ</td>
-<td>k ɡ</td>
-<td>q ɢ</td>
-<td></td>
-<td>ʔ</td>
+<td><span class="ipa-symbol" data-symbol="ʈ">ʈ</span> <span class="ipa-symbol" data-symbol="ɖ">ɖ</span></td>
+<td><span class="ipa-symbol" data-symbol="c">c</span> <span class="ipa-symbol" data-symbol="ɟ">ɟ</span></td>
+<td><span class="ipa-symbol" data-symbol="k">k</span> <span class="ipa-symbol" data-symbol="ɡ">ɡ</span></td>
+<td><span class="ipa-symbol" data-symbol="q">q</span> <span class="ipa-symbol" data-symbol="ɢ">ɢ</span></td>
+<td class="impossible"></td>
+<td><span class="ipa-symbol" data-symbol="ʔ">ʔ</span></td>
 </tr>
 
 <tr>
 <th>Nasal</th>
-<td>m</td>
-<td>ɱ</td>
+<td><span class="ipa-symbol" data-symbol="m">m</span></td>
+<td><span class="ipa-symbol" data-symbol="ɱ">ɱ</span></td>
 <td></td>
-<td>n</td>
+<td><span class="ipa-symbol" data-symbol="n">n</span></td>
 <td></td>
-<td>ɳ</td>
-<td>ɲ</td>
-<td>ŋ</td>
-<td>ɴ</td>
-<td></td>
-<td></td>
+<td><span class="ipa-symbol" data-symbol="ɳ">ɳ</span></td>
+<td><span class="ipa-symbol" data-symbol="ɲ">ɲ</span></td>
+<td><span class="ipa-symbol" data-symbol="ŋ">ŋ</span></td>
+<td><span class="ipa-symbol" data-symbol="ɴ">ɴ</span></td>
+<td class="impossible"></td>
+<td class="impossible"></td>
 </tr>
 
 <tr>
 <th>Trill</th>
-<td>ʙ</td>
+<td><span class="ipa-symbol" data-symbol="ʙ">ʙ</span></td>
 <td></td>
 <td></td>
-<td>r</td>
+<td><span class="ipa-symbol" data-symbol="r">r</span></td>
 <td></td>
 <td></td>
 <td></td>
+<td class="impossible"></td>
+<td><span class="ipa-symbol" data-symbol="ʀ">ʀ</span></td>
 <td></td>
-<td>ʀ</td>
-<td></td>
-<td></td>
+<td class="impossible"></td>
 </tr>
 
 <tr>
 <th>Tap / Flap</th>
 <td></td>
-<td>ⱱ</td>
+<td><span class="ipa-symbol" data-symbol="ⱱ">ⱱ</span></td>
 <td></td>
-<td>ɾ</td>
+<td><span class="ipa-symbol" data-symbol="ɾ">ɾ</span></td>
 <td></td>
-<td>ɽ</td>
+<td><span class="ipa-symbol" data-symbol="ɽ">ɽ</span></td>
+<td></td>
+<td class="impossible"></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
+<td class="impossible"></td>
 </tr>
 
 <tr>
 <th>Fricative</th>
-<td>ɸ β</td>
-<td>f v</td>
-<td>θ ð</td>
-<td>s z</td>
-<td>ʃ ʒ</td>
-<td>ʂ ʐ</td>
-<td>ç ʝ</td>
-<td>x ɣ</td>
-<td>χ ʁ</td>
-<td>ħ ʕ</td>
-<td>h ɦ</td>
-</tr>
-
-<tr>
-<th>Lateral fricative</th>
-<td></td>
-<td></td>
-<td></td>
-<td>ɬ ɮ</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="ipa-symbol" data-symbol="ɸ">ɸ</span> <span class="ipa-symbol" data-symbol="β">β</span></td>
+<td><span class="ipa-symbol" data-symbol="f">f</span> <span class="ipa-symbol" data-symbol="v">v</span></td>
+<td><span class="ipa-symbol" data-symbol="θ">θ</span> <span class="ipa-symbol" data-symbol="ð">ð</span></td>
+<td><span class="ipa-symbol" data-symbol="s">s</span> <span class="ipa-symbol" data-symbol="z">z</span></td>
+<td><span class="ipa-symbol" data-symbol="ʃ">ʃ</span> <span class="ipa-symbol" data-symbol="ʒ">ʒ</span></td>
+<td><span class="ipa-symbol" data-symbol="ʂ">ʂ</span> <span class="ipa-symbol" data-symbol="ʐ">ʐ</span></td>
+<td><span class="ipa-symbol" data-symbol="ç">ç</span> <span class="ipa-symbol" data-symbol="ʝ">ʝ</span></td>
+<td><span class="ipa-symbol" data-symbol="x">x</span> <span class="ipa-symbol" data-symbol="ɣ">ɣ</span></td>
+<td><span class="ipa-symbol" data-symbol="χ">χ</span> <span class="ipa-symbol" data-symbol="ʁ">ʁ</span></td>
+<td><span class="ipa-symbol" data-symbol="ħ">ħ</span> <span class="ipa-symbol" data-symbol="ʕ">ʕ</span></td>
+<td><span class="ipa-symbol" data-symbol="h">h</span> <span class="ipa-symbol" data-symbol="ɦ">ɦ</span></td>
 </tr>
 
 <tr>
 <th>Approximant</th>
 <td></td>
-<td>ʋ</td>
+<td><span class="ipa-symbol" data-symbol="ʋ">ʋ</span></td>
 <td></td>
-<td>ɹ</td>
+<td><span class="ipa-symbol" data-symbol="ɹ">ɹ</span></td>
 <td></td>
-<td>ɻ</td>
-<td>j</td>
-<td>ɰ</td>
+<td><span class="ipa-symbol" data-symbol="ɻ">ɻ</span></td>
+<td><span class="ipa-symbol" data-symbol="j">j</span></td>
+<td><span class="ipa-symbol" data-symbol="ɰ">ɰ</span></td>
 <td></td>
 <td></td>
-<td></td>
+<td class="impossible"></td>
 </tr>
 
 <tr>
-<th>Lateral approximant</th>
+<th>Lateral Approximant</th>
+<td class="impossible"></td>
+<td class="impossible"></td>
 <td></td>
+<td><span class="ipa-symbol" data-symbol="l">l</span></td>
 <td></td>
+<td><span class="ipa-symbol" data-symbol="ɭ">ɭ</span></td>
+<td><span class="ipa-symbol" data-symbol="ʎ">ʎ</span></td>
+<td><span class="ipa-symbol" data-symbol="ʟ">ʟ</span></td>
 <td></td>
-<td>l</td>
-<td></td>
-<td>ɭ</td>
-<td>ʎ</td>
-<td>ʟ</td>
-<td></td>
-<td></td>
-<td></td>
+<td class="impossible"></td>
+<td class="impossible"></td>
 </tr>
 
 </tbody>
 </table>
+</section>
 
-<!-- ================= NON-PULMONIC ================= -->
+<!-- =======================
+     VOWELS
+======================= -->
+<section>
+<h2>Vowels</h2>
 
-<h3>Consonants (Non-Pulmonic)</h3>
+<div id="vowelQuadrilateral">
+<img src="vowelBackground.png" alt="Vowel chart">
 
-<table class="ipa-table">
-<tr><th>Clicks</th><td>ʘ ǀ ǃ ǂ ǁ</td></tr>
-<tr><th>Implosives</th><td>ɓ ɗ ʄ ɠ ʛ</td></tr>
-<tr><th>Ejectives</th><td>pʼ tʼ kʼ sʼ</td></tr>
+<span class="ipa-symbol vowel" data-symbol="i" style="right:82%; top:6%;">i</span>
+<span class="ipa-symbol vowel" data-symbol="y" style="right:70%; top:6%;">y</span>
+<span class="ipa-symbol vowel" data-symbol="ɨ" style="right:46%; top:6%;">ɨ</span>
+<span class="ipa-symbol vowel" data-symbol="ʉ" style="right:36%; top:6%;">ʉ</span>
+<span class="ipa-symbol vowel" data-symbol="ɯ" style="right:10%; top:6%;">ɯ</span>
+<span class="ipa-symbol vowel" data-symbol="u" style="right:1%; top:6%;">u</span>
+
+<span class="ipa-symbol vowel" data-symbol="e" style="right:70%; top:32%;">e</span>
+<span class="ipa-symbol vowel" data-symbol="ø" style="right:60%; top:32%;">ø</span>
+<span class="ipa-symbol vowel" data-symbol="ə" style="right:32%; top:45%;">ə</span>
+<span class="ipa-symbol vowel" data-symbol="o" style="right:1%; top:32%;">o</span>
+
+<span class="ipa-symbol vowel" data-symbol="a" style="right:45%; top:85%;">a</span>
+<span class="ipa-symbol vowel" data-symbol="ɑ" style="right:10%; top:85%;">ɑ</span>
+<span class="ipa-symbol vowel" data-symbol="ɒ" style="right:1%; top:85%;">ɒ</span>
+</div>
+</section>
+
+<!-- =======================
+     UNICODE NOT ON IPA CHART
+======================= -->
+<section>
+<h2>Unicode Symbols Not on the IPA Chart</h2>
+
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Unicode</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+
+<tr><td><span class="ipa-symbol" data-symbol="ɚ">ɚ</span></td><td>025A</td><td>LATIN SMALL LETTER SCHWA WITH HOOK</td><td>Rhotacized schwa</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ɝ">ɝ</span></td><td>025D</td><td>LATIN SMALL LETTER REVERSED OPEN E WITH HOOK</td><td>Rhotacized open-mid central vowel</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ʣ">ʣ</span></td><td>02A3</td><td>DZ DIGRAPH</td><td>Voiced alveolar affricate</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ʤ">ʤ</span></td><td>02A4</td><td>DEZH DIGRAPH</td><td>Voiced postalveolar affricate</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ʦ">ʦ</span></td><td>02A6</td><td>TS DIGRAPH</td><td>Voiceless alveolar affricate</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ʧ">ʧ</span></td><td>02A7</td><td>TESH DIGRAPH</td><td>Voiceless postalveolar affricate</td></tr>
+<tr><td><span class="ipa-symbol" data-symbol="ɫ">ɫ</span></td><td>026B</td><td>L WITH MIDDLE TILDE</td><td>Velarized alveolar lateral approximant</td></tr>
+
+</tbody>
 </table>
+</section>
 
-<!-- ================= VOWELS ================= -->
-
-<h3>Vowels</h3>
-
-<table class="ipa-table">
-<tr><th>Close</th><td>i y ɨ ʉ ɯ u</td></tr>
-<tr><th>Near-close</th><td>ɪ ʏ ʊ</td></tr>
-<tr><th>Close-mid</th><td>e ø ɘ ɵ ɤ o</td></tr>
-<tr><th>Mid</th><td>ə</td></tr>
-<tr><th>Open-mid</th><td>ɛ œ ɜ ɞ ʌ ɔ</td></tr>
-<tr><th>Near-open</th><td>æ ɐ</td></tr>
-<tr><th>Open</th><td>a ɶ ɑ ɒ</td></tr>
-</table>
-
-<!-- ================= SUPRASEGMENTALS ================= -->
-
-<h3>Suprasegmentals</h3>
-<p>ˈ ˌ ː ˑ | ‖ . ‿</p>
-
-<!-- ================= DIACRITICS ================= -->
-
-<h3>Diacritics</h3>
-<p>◌̥ ◌̬ ◌ʰ ◌ʷ ◌ʲ ◌ˠ ◌ˤ ◌̃ ◌̩ ◌̯ ◌̚</p>
-
-<!-- ================= TONES ================= -->
-
-<h3>Tones & Accents</h3>
-<p>˥ ˦ ˧ ˨ ˩ ˥˩ ˩˥ ↗ ↘</p>
-
+<!-- =======================
+     INPUT AREA
+======================= -->
+<section id="input-area">
+<div>
+<label>Latin box</label>
+<textarea placeholder="Latin spelling"></textarea>
 </div>
 
-<!-- ================= INPUT AREA ================= -->
+<div>
+<label>Pronunciation box</label>
+<textarea id="pronunciation" placeholder="IPA transcription"></textarea>
+</div>
 
-<section id="input-area">
-  <div class="input-box">
-    <label>Latin box</label>
-    <textarea></textarea>
-  </div>
-
-  <div class="input-box">
-    <label>Pronunciation box</label>
-    <textarea id="pronunciation"></textarea>
-  </div>
-
-  <button id="check-btn">Check</button>
+<button id="checkBtn">Check</button>
 </section>
 
-<!-- ================= EXTRA UNICODE IPA ================= -->
+<footer>
+<p>Designed for conlang phonology review • Unicode IPA compliant</p>
+</footer>
 
-<section id="extra-ipa">
-<h2>Unicode IPA Symbols Not on the Official IPA Chart</h2>
+<script>
+const ipaSymbols = document.querySelectorAll(".ipa-symbol");
+const checkBtn = document.getElementById("checkBtn");
+const pronunciation = document.getElementById("pronunciation");
 
-<table class="ipa-table">
-<tr><th>Symbol</th><th>Definition</th></tr>
-<tr><td>ɚ</td><td>Rhotacized schwa</td></tr>
-<tr><td>ɝ</td><td>Rhotacized open-mid central vowel</td></tr>
-<tr><td>ʣ</td><td>Voiced alveolar affricate</td></tr>
-<tr><td>ʤ</td><td>Voiced postalveolar affricate</td></tr>
-<tr><td>ʥ</td><td>Voiced alveolo-palatal affricate</td></tr>
-<tr><td>ʦ</td><td>Voiceless alveolar affricate</td></tr>
-<tr><td>ʧ</td><td>Voiceless postalveolar affricate</td></tr>
-<tr><td>ʨ</td><td>Voiceless alveolo-palatal affricate</td></tr>
-<tr><td>ɫ</td><td>Velarized alveolar lateral approximant</td></tr>
-<tr><td>ʱ</td><td>Breathy voiced</td></tr>
-<tr><td>ˀ</td><td>Glottal stop</td></tr>
-<tr><td>o̢</td><td>Retroflexion</td></tr>
-<tr><td>o᷆</td><td>Mid-low falling tone</td></tr>
-<tr><td>o᷇</td><td>High-mid falling tone</td></tr>
-<tr><td>o᷈</td><td>Falling-rising tone</td></tr>
-</table>
-</section>
+ipaSymbols.forEach(sym => {
+  sym.addEventListener("click", () => {
+    sym.classList.toggle("active");
+  });
+});
 
-<script src="script.js"></script>
+checkBtn.addEventListener("click", () => {
+  const text = pronunciation.value;
+
+  ipaSymbols.forEach(sym => {
+    sym.classList.remove("used-active", "used-inactive");
+    const char = sym.dataset.symbol;
+
+    if (text.includes(char)) {
+      if (sym.classList.contains("active")) {
+        sym.classList.add("used-active");
+      } else {
+        sym.classList.add("used-inactive");
+      }
+    }
+  });
+});
+</script>
+
 </body>
 </html>
