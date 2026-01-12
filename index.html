@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Timeline Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="timeline-container">
+        <h1>Character Timeline Organizer</h1>
+        <div id="controls">
+            <button id="new-group">New Group</button>
+            <label for="color-picker">Select Color:</label>
+            <select id="color-picker">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="gray">Gray</option>
+            </select>
+        </div>
+        <div id="timeline"></div>
+        <button id="confirm-group" style="display: none;">Confirm Selection</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
