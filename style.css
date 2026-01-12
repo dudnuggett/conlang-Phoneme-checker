@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+#ipa-chart {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.ipa-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ipa-label {
+  width: 120px;
+  font-weight: bold;
+}
+
+.ipa-symbol {
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #ccc; /* inactive */
+  user-select: none;
+}
+
+.ipa-symbol.active {
+  color: #000;
+}
+
+.ipa-symbol.used-active {
+  color: green;
+}
+
+.ipa-symbol.used-inactive {
+  color: red;
+}
+
+#input-area {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 250px;
+  height: 100px;
+  font-size: 16px;
+}
+
+button {
+  height: 40px;
+  margin-top: 22px;
+  cursor: pointer;
+}
