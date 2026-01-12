@@ -160,42 +160,59 @@ span.ipa {
 	border-left: 1px solid #777;
 }
 
-/* === Vowel Quadrilateral === */
-#vowels {
-	float: right;
-	width: 45%;
-	margin-bottom: 2em;
+/* Vowel Quadrilateral ************************************/
+#vowels  {
+	float:right;
+	width:45%;
+	margin-bottom:2em;
 }
 
-div#vowelQuadrilateral {
-	position: relative;
-	font-size: 1em;
-	width: 100%;
-	height: 310px;
+/*#closeVowels span,
+#close-midVowels span,
+#middleVowels span,
+#open-midVowels span,
+#openLaxVowels span,
+#openVowels span  {
+	padding-left:1ex;
+	padding-right:1ex;
 }
 
+#vowels embed  {
+	width:100%;
+	font-size:20pt;
+	height:9em;
+}*/
+
+div#vowelQuadrilateral  {
+	/*
+	background-image:url(vowelBackground.png);
+	background-position:right top;
+	background-repeat:no-repeat;
+	*/
+	position:relative;
+	font-size:1em;
+	width:100%;
+	height:310px;
+}
 div#vowelQuadrilateral span {
-	position: absolute;
-	z-index: 100;
-	font-size: 20pt;
+	position:absolute;
+	z-index:100;
 }
 
-/* Optional background image for chart */
 img#vowelBackground {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+	position:absolute;
+	width:100%;
+	height:100%;
 }
-
-div#vowelSymbols span,
-#Vowels td {
-	font-size: 20pt;
-	padding: 0 5px;
+div#vowelSymbols span, #Vowels td{
+	font-size:20pt;
+	padding:0 5px;
 }
+div#vowelLabels {}
 
 #vowels p.caption {
-	margin-top: .25em;
-	margin-left: 25%;
+	margin-top:.25em;
+	margin-left:25%;
 }
 
 /* === Other Symbols === */
