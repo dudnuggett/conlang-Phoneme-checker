@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Timeline Organizer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Conlang IPA Checker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="timeline-container">
-        <h1>Character Timeline Organizer</h1>
-        <div id="controls">
-            <button id="new-group">New Group</button>
-            <label for="color-picker">Select Color:</label>
-            <select id="color-picker">
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-                <option value="orange">Orange</option>
-                <option value="purple">Purple</option>
-                <option value="pink">Pink</option>
-                <option value="gray">Gray</option>
-            </select>
-        </div>
-        <div id="timeline"></div>
-        <button id="confirm-group" style="display: none;">Confirm Selection</button>
-    </div>
-    <script src="script.js"></script>
+
+<h1>Conlang IPA Pronunciation Checker</h1>
+
+<section id="ipa-chart">
+  <h2>IPA Chart</h2>
+
+  <!-- Example: Pulmonic consonants (partial starter set) -->
+  <div class="ipa-row">
+    <span class="ipa-label">Plosive</span>
+    <span class="ipa-symbol" data-symbol="p">p</span>
+    <span class="ipa-symbol" data-symbol="b">b</span>
+    <span class="ipa-symbol" data-symbol="t">t</span>
+    <span class="ipa-symbol" data-symbol="d">d</span>
+    <span class="ipa-symbol" data-symbol="k">k</span>
+    <span class="ipa-symbol" data-symbol="g">g</span>
+  </div>
+
+  <div class="ipa-row">
+    <span class="ipa-label">Nasal</span>
+    <span class="ipa-symbol" data-symbol="m">m</span>
+    <span class="ipa-symbol" data-symbol="n">n</span>
+    <span class="ipa-symbol" data-symbol="ŋ">ŋ</span>
+  </div>
+
+  <div class="ipa-row">
+    <span class="ipa-label">Vowels</span>
+    <span class="ipa-symbol" data-symbol="i">i</span>
+    <span class="ipa-symbol" data-symbol="e">e</span>
+    <span class="ipa-symbol" data-symbol="a">a</span>
+    <span class="ipa-symbol" data-symbol="o">o</span>
+    <span class="ipa-symbol" data-symbol="u">u</span>
+  </div>
+
+</section>
+
+<section id="input-area">
+  <div class="input-box">
+    <label for="latin">Latin box</label>
+    <textarea id="latin" placeholder="Enter Latin spelling here..."></textarea>
+  </div>
+
+  <div class="input-box">
+    <label for="pronunciation">Pronunciation box</label>
+    <textarea id="pronunciation" placeholder="Enter IPA pronunciation here..."></textarea>
+  </div>
+
+  <button id="check-btn">Check</button>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
