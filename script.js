@@ -1,26 +1,42 @@
-const ipaSymbols = document.querySelectorAll(".ipa-symbol");
-const checkBtn = document.getElementById("check-btn");
 const pronunciationBox = document.getElementById("pronunciation");
+const checkBtn = document.getElementById("check-btn");
 
-// Toggle active/inactive on click
-ipaSymbols.forEach(symbol => {
-  symbol.addEventListener("click", () => {
-    symbol.classList.toggle("active");
+let ipaSymbols = [];
+
+function initIPASymbols() {
+  document.querySelectorAll(".ipa-table td, .ipa-chart p").forEach(cell => {
+    const chars = cell.textContent.trim().split(/\s+/);
+
+    cell.textContent = "";
+
+    chars.forEach(char => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.classList.add("ipa-symbol", "inactive");
+      span.dataset.symbol = char;
+
+      span.addEventListener("click", () => {
+        span.classList.toggle("active");
+        span.classList.toggle("inactive");
+      });
+
+      cell.appendChild(span);
+      cell.append(" ");
+
+      ipaSymbols.push(span);
+    });
   });
-});
+}
 
-checkBtn.addEventListener("click", () => {
-  const text = pronunciationBox.value;
+function checkPronunciation() {
+  const text = pronunciationBox.value.normalize("NFD");
 
-  // Reset used states
   ipaSymbols.forEach(symbol => {
     symbol.classList.remove("used-active", "used-inactive");
-  });
 
-  ipaSymbols.forEach(symbol => {
-    const ipaChar = symbol.dataset.symbol;
+    const ipa = symbol.dataset.symbol.normalize("NFD");
 
-    if (text.includes(ipaChar)) {
+    if (text.includes(ipa)) {
       if (symbol.classList.contains("active")) {
         symbol.classList.add("used-active");
       } else {
@@ -28,4 +44,7 @@ checkBtn.addEventListener("click", () => {
       }
     }
   });
-});
+}
+
+checkBtn.addEventListener("click", checkPronunciation);
+document.addEventListener("DOMContentLoaded", initIPASymbols);
