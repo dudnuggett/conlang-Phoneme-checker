@@ -63,7 +63,7 @@ td.impossible {
 }
 
 .ipa-symbol + .ipa-symbol {
-  margin-left: 8px;
+  margin-left: 10px;
 }
 
 /* =========================
@@ -179,21 +179,22 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
+/* Label styles */
 .vowel-label {
-    position: relative;
+    position: absolute;       /* REQUIRED for top/left to work! */
     font-size: 16px;
     color: #333;
     font-weight: bold;
+    pointer-events: none;     /* So users can't accidentally select the label */
+    user-select: none;
 }
 
 .horizontal-label {
-    /* you can add custom styles for top labels here */
     text-align: center;
 }
 
 .vertical-label {
-    /* you can add custom styles for left-side labels here */
-    text-align: left;
+    text-align: right;
     white-space: nowrap;
 }
 /* =========================
