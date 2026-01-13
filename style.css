@@ -62,6 +62,10 @@ td.impossible {
   background-color: #e6e6e6;
 }
 
+.ipa-symbol + .ipa-symbol {
+  margin-left: 8px;
+}
+
 /* =========================
    IPA SYMBOL STATES
 ========================= */
