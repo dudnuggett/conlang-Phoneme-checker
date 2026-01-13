@@ -180,7 +180,7 @@ button:hover {
 }
 
 .vowel-label {
-    position: absolute;
+    position: relative;
     font-size: 16px;
     color: #333;
     font-weight: bold;
@@ -193,7 +193,7 @@ button:hover {
 
 .vertical-label {
     /* you can add custom styles for left-side labels here */
-    text-align: right;
+    text-align: left;
     white-space: nowrap;
 }
 /* =========================
