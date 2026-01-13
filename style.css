@@ -179,42 +179,23 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
-#vowelLabels {
+.vowel-label {
     position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-#horizontalLabels {
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
 }
 
 .horizontal-label {
-    position: absolute;
-    font-size: 16px;
-    transform: translateY(-100%); /* Position above the chart */
-}
-
-#verticalLabels {
-    position: absolute;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    writing-mode: vertical-lr; /* Makes it easy to rotate vertical text */
+    /* you can add custom styles for top labels here */
+    text-align: center;
 }
 
 .vertical-label {
-    font-size: 16px;
+    /* you can add custom styles for left-side labels here */
     text-align: right;
-    transform: translateX(-100%); /* Position outside the chart */
+    white-space: nowrap;
 }
-
 /* =========================
    UNICODE TABLE
 ========================= */
