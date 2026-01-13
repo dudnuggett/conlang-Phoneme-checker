@@ -181,12 +181,10 @@ button:hover {
 
 /* Label styles */
 .vowel-label {
-    position: absolute;       /* REQUIRED for top/left to work! */
+    position: absolute;
     font-size: 16px;
     color: #333;
     font-weight: bold;
-    pointer-events: none;     /* So users can't accidentally select the label */
-    user-select: none;
 }
 
 .horizontal-label {
