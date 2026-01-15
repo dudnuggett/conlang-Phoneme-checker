@@ -33,6 +33,14 @@ text-align: center;
 vertical-align: middle;
 }
 
+td.no-left-border {
+  border-left: 1px solid #ffffff;
+}
+
+td.no-right-border {
+  border-right: 1px solid #ffffff;
+}
+
 th {
 background: #f4f4f4;
 }
@@ -163,10 +171,10 @@ color: #555;
 <th>Nasal</th>
 <td><span class="ipa-symbol" data-symbol="m̥">m̥</span> <span class="ipa-symbol" data-symbol="m">m</span></td>
 <td><span class="ipa-symbol" data-symbol="ɱ̊">ɱ̊</span> <span class="ipa-symbol" data-symbol="ɱ">ɱ</span></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="n̪̊">n̪̊</span> <span class="ipa-symbol" data-symbol="n̪">n̪</span></td>
-<td><span class="ipa-symbol" data-symbol="n̥">n̥</span> <span class="ipa-symbol" data-symbol="n">n</span></td>
-<td><span class="ipa-symbol" data-symbol="n̠̊">n̠̊</span> <span class="ipa-symbol" data-symbol="n̠">n̠</span></td>
+<td><span class="ipa-symbol" data-symbol="n̼">n̼</span></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="n̪̊">n̪̊</span> <span class="ipa-symbol" data-symbol="n̪">n̪</span></td>
+<td class="no-left-border no-right-border"><span class="ipa-symbol" data-symbol="n̥">n̥</span> <span class="ipa-symbol" data-symbol="n">n</span></td>
+<td class="no-left-border"><span class="ipa-symbol" data-symbol="n̠̊">n̠̊</span> <span class="ipa-symbol" data-symbol="n̠">n̠</span></td>
 <td><span class="ipa-symbol" data-symbol="ɳ̊">ɳ̊</span> <span class="ipa-symbol" data-symbol="ɳ">ɳ</span></td>
 <td><span class="ipa-symbol" data-symbol="ɲ̊">ɲ̊</span> <span class="ipa-symbol" data-symbol="ɲ">ɲ</span></td>
 <td><span class="ipa-symbol" data-symbol="ŋ̊">ŋ̊</span> <span class="ipa-symbol" data-symbol="ŋ">ŋ</span></td>
@@ -180,10 +188,10 @@ color: #555;
 <th>Plosive</th>
 <td><span class="ipa-symbol" data-symbol="p">p</span> <span class="ipa-symbol" data-symbol="b">b</span></td>
 <td><span class="ipa-symbol" data-symbol="p̪">p̪</span> <span class="ipa-symbol" data-symbol="b̪">b̪</span></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="t̪">t̪</span> <span class="ipa-symbol" data-symbol="d̪">d̪</span></td>
-<td><span class="ipa-symbol" data-symbol="t">t</span> <span class="ipa-symbol" data-symbol="d">d</span></td>
-<td></td>
+<td><span class="ipa-symbol" data-symbol="t̼">t̼</span> <span class="ipa-symbol" data-symbol="d̼">d̼</span></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="t̪">t̪</span> <span class="ipa-symbol" data-symbol="d̪">d̪</span></td>
+<td class="no-left-border no-right-border"><span class="ipa-symbol" data-symbol="t">t</span> <span class="ipa-symbol" data-symbol="d">d</span></td>
+<td class="no-left-border"></td>
 <td><span class="ipa-symbol" data-symbol="ʈ">ʈ</span> <span class="ipa-symbol" data-symbol="ɖ">ɖ</span></td>
 <td><span class="ipa-symbol" data-symbol="c">c</span> <span class="ipa-symbol" data-symbol="ɟ">ɟ</span></td>
 <td><span class="ipa-symbol" data-symbol="k">k</span> <span class="ipa-symbol" data-symbol="ɡ">ɡ</span></td>
@@ -198,11 +206,11 @@ color: #555;
 <td></td>
 <td></td>
 <td></td>
-<td><span class="ipa-symbol" data-symbol="t̪s̪̪">t̪s̪</span> <span class="ipa-symbol" data-symbol="d̪z̪">d̪z̪</span></td>
-<td><span class="ipa-symbol" data-symbol="ts">ts</span> <span class="ipa-symbol" data-symbol="dz">dz</span></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="t̪s̪̪">t̪s̪</span> <span class="ipa-symbol" data-symbol="d̪z̪">d̪z̪</span></td>
+<td class="no-left-border"><span class="ipa-symbol" data-symbol="ts">ts</span> <span class="ipa-symbol" data-symbol="dz">dz</span></td>
 <td><span class="ipa-symbol" data-symbol="t̠ʃ">t̠ʃ</span> <span class="ipa-symbol" data-symbol="d̠ʒ">d̠ʒ</span></td>
 <td><span class="ipa-symbol" data-symbol="tʂ">tʂ</span> <span class="ipa-symbol" data-symbol="dʐ">dʐ</span></td>
-<td><span class="ipa-symbol" data-symbol="tɕ">tɕ</span> <span class="ipa-symbol" data-symbol="tɕ">tɕ</span></td>
+<td><span class="ipa-symbol" data-symbol="tɕ">tɕ</span> <span class="ipa-symbol" data-symbol="dʑ">dʑ</span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -267,9 +275,9 @@ color: #555;
 <td><span class="ipa-symbol" data-symbol="β̞">β̞</span></td>
 <td><span class="ipa-symbol" data-symbol="ʋ">ʋ</span></td>
 <td></td>
-<td><span class="ipa-symbol" data-symbol="ð̞">ð̞</span></td>
-<td><span class="ipa-symbol" data-symbol="ɹ">ɹ</span></td>
-<td><span class="ipa-symbol" data-symbol="ɹ̠">ɹ̠</span></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="ð̞">ð̞</span></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="ɹ">ɹ</span></td>
+<td class="no-left-border"><span class="ipa-symbol" data-symbol="ɹ̠">ɹ̠</span></td>
 <td><span class="ipa-symbol" data-symbol="ɻ">ɻ</span></td>
 <td><span class="ipa-symbol" data-symbol="j">j</span></td>
 <td><span class="ipa-symbol" data-symbol="ɰ">ɰ</span></td>
@@ -284,9 +292,9 @@ color: #555;
 <td><span class="ipa-symbol" data-symbol="ⱱ̟">ⱱ̟</span></td>
 <td><span class="ipa-symbol" data-symbol="ⱱ">ⱱ</span></td>
 <td></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="ɾ̥">ɾ̥</span> <span class="ipa-symbol" data-symbol="ɾ">ɾ</span></td>
-<td></td>
+<td class="no-right-border"></td>
+<td class="no-left-border no-right-border"><span class="ipa-symbol" data-symbol="ɾ̥">ɾ̥</span> <span class="ipa-symbol" data-symbol="ɾ">ɾ</span></td>
+<td class="no-left-border"></td>
 <td><span class="ipa-symbol" data-symbol="ɽ̊">ɽ̊</span> <span class="ipa-symbol" data-symbol="ɽ">ɽ</span></td>
 <td></td>
 <td></td>
@@ -301,9 +309,9 @@ color: #555;
 <td><span class="ipa-symbol" data-symbol="ʙ̥">ʙ̥</span> <span class="ipa-symbol" data-symbol="ʙ">ʙ</span></td>
 <td></td>
 <td></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="r̥">r̥</span> <span class="ipa-symbol" data-symbol="r">r</span></td>
-<td><span class="ipa-symbol" data-symbol="r̠">r̠</span></td>
+<td class="no-right-border"></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="r̥">r̥</span> <span class="ipa-symbol" data-symbol="r">r</span></td>
+<td class="no-left-border"><span class="ipa-symbol" data-symbol="r̠">r̠</span></td>
 <td><span class="ipa-symbol" data-symbol="ɽ̊r̥">ɽ̊r̥</span> <span class="ipa-symbol" data-symbol="ɽr">ɽr</span></td>
 <td></td>
 <td></td>
@@ -318,9 +326,9 @@ color: #555;
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="tɬ">tɬ</span> <span class="ipa-symbol" data-symbol="dɮ">dɮ</span></td>
-<td></td>
+<td class="no-right-border"></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="tɬ">tɬ</span> <span class="ipa-symbol" data-symbol="dɮ">dɮ</span></td>
+<td class="no-left-border"></td>
 <td><span class="ipa-symbol" data-symbol="tꞎ">tꞎ</span> <span class="ipa-symbol" data-symbol="d𝼅">d𝼅</span></td>
 <td><span class="ipa-symbol" data-symbol="c𝼆">c𝼆</span> <span class="ipa-symbol" data-symbol="ɟʎ̝">ɟʎ̝</span></td>
 <td><span class="ipa-symbol" data-symbol="k𝼄">k𝼄</span> <span class="ipa-symbol" data-symbol="ɡʟ̝">ɡʟ̝</span></td>
@@ -335,9 +343,9 @@ color: #555;
 <td></td>
 <td></td>
 <td></td>
-<td><span class="ipa-symbol" data-symbol="ɬ̪">ɬ̪</span></td>
-<td><span class="ipa-symbol" data-symbol="ɬ">ɬ</span> <span class="ipa-symbol" data-symbol="ɮ">ɮ</span></td>
-<td></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="ɬ̪">ɬ̪</span></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="ɬ">ɬ</span> <span class="ipa-symbol" data-symbol="ɮ">ɮ</span></td>
+<td class="no-left-border"></td>
 <td><span class="ipa-symbol" data-symbol="ꞎ">ꞎ</span> <span class="ipa-symbol" data-symbol="𝼅">𝼅</span></td>
 <td><span class="ipa-symbol" data-symbol="𝼆">𝼆</span> <span class="ipa-symbol" data-symbol="ʎ̝">ʎ̝</span></td>
 <td><span class="ipa-symbol" data-symbol="𝼄">𝼄</span> <span class="ipa-symbol" data-symbol="ʟ̝">ʟ̝</span></td>
@@ -352,9 +360,9 @@ color: #555;
 <td></td>
 <td></td>
 <td></td>
-<td><span class="ipa-symbol" data-symbol="l̪">l̪</span></td>
-<td><span class="ipa-symbol" data-symbol="l̥">l̥</span> <span class="ipa-symbol" data-symbol="l">l</span></td>
-<td><span class="ipa-symbol" data-symbol="l̠">l̠</span></td>
+<td class="no-right-border"><span class="ipa-symbol" data-symbol="l̪">l̪</span></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="l̥">l̥</span> <span class="ipa-symbol" data-symbol="l">l</span></td>
+<td class="no-left-border"><span class="ipa-symbol" data-symbol="l̠">l̠</span></td>
 <td><span class="ipa-symbol" data-symbol="ɭ̊">ɭ̊</span> <span class="ipa-symbol" data-symbol="ɭ">ɭ</span></td>
 <td><span class="ipa-symbol" data-symbol="ʎ̥">ʎ̥</span> <span class="ipa-symbol" data-symbol="ʎ">ʎ</span></td>
 <td><span class="ipa-symbol" data-symbol="ʟ̥">ʟ̥</span> <span class="ipa-symbol" data-symbol="ʟ">ʟ</span></td>
@@ -369,9 +377,9 @@ color: #555;
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="ɺ̥">ɺ̥</span> <span class="ipa-symbol" data-symbol="ɺ">ɺ</span></td>
-<td></td>
+<td class="no-right-border"></td>
+<td class="no-right-border no-left-border"><span class="ipa-symbol" data-symbol="ɺ̥">ɺ̥</span> <span class="ipa-symbol" data-symbol="ɺ">ɺ</span></td>
+<td class="no-left-border"></td>
 <td><span class="ipa-symbol" data-symbol="𝼈̊">𝼈̊</span> <span class="ipa-symbol" data-symbol="𝼈">𝼈</span></td>
 <td><span class="ipa-symbol" data-symbol="ʎ̮">ʎ̮</span></td>
 <td><span class="ipa-symbol" data-symbol="ʟ̆">ʟ̆</span></td>
@@ -386,7 +394,8 @@ color: #555;
 
 
 
-  
+
+
 
 <section>
 <h2>Non-Pulmonic Consonants</h2>
@@ -495,9 +504,9 @@ color: #555;
 <th>Lateral Fricative</th>
 <td></td>
 <td></td>
-<td></td>
-<td><span class="ipa-symbol" data-symbol="ɬʼ">ɬʼ</span></td>
-<td></td>
+<td class="no-right-border"></td>
+<td class="no-left-border no-right-border"><span class="ipa-symbol" data-symbol="ɬʼ">ɬʼ</span></td>
+<td class="no-left-border"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -510,14 +519,14 @@ color: #555;
 bottom: uvular)</th>
 <tr>
 <th>Tenuis</th>
-<td>kʘ
+<td class="no-right-border">kʘ
 qʘ</td>
-<td></td>
+<td class="no-left-border"></td>
 <td>kǀ
 qǀ</td>
-<td>kǃ
+<td class="no-right-border">kǃ
 qǃ</td>
-<td></td>
+<td class="no-left-border"></td>
 <td>k𝼊
 q𝼊	</td>
 <td>kǂ
@@ -529,14 +538,14 @@ qǂ</td>
 
 <tr>
 <th>Voiced</th>
-<td>ɡʘ
+<td class="no-right-border">ɡʘ
 ɢʘ</td>		
-<td></td>
+<td class="no-left-border"></td>
 <td>ɡǀ
 ɢǀ</td>
-<td>ɡǃ
+<td class="no-right-border">ɡǃ
 ɢǃ</td>
-<td></td>
+<td class="no-left-border"></td>
 <td>ɡ𝼊
 ɢ𝼊	</td>
 <td>ɡǂ
@@ -548,14 +557,14 @@ qǂ</td>
 
 <tr>
 <th>Nasal</th>
-<td>ŋʘ
-ɴʘ
-<td></td>
+<td class="no-right-border">ŋʘ
+ɴʘ</td>
+<td class="no-left-border"></td>
 <td>ŋǀ
 ɴǀ</td>
-<td>ŋǃ
+<td class="no-right-border">ŋǃ
 ɴǃ</td>
-<td></td>
+<td class="no-left-border"></td>
 <td>ŋ𝼊
 ɴ𝼊	</td>
 <td>ŋǂ
@@ -569,10 +578,10 @@ qǂ</td>
 <th>Tenuis lateral</th>
 <td></td>
 <td></td>
-<td></td>
-<td>kǁ
+<td class="no-right-border"></td>
+<td class="no-left-border no-right-border">kǁ
 qǁ</td>	
-<td></td>
+<td class="no-left-border"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -584,10 +593,10 @@ qǁ</td>
 <th>Voiced lateral</th>
 <td></td>
 <td></td>
-<td></td>
-<td>ɡǁ
+<td class="no-right-border"></td>
+<td class="no-left-border no-right-border">ɡǁ
 ɢǁ</td>	
-<td></td>
+<td class="no-left-border"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -599,20 +608,20 @@ qǁ</td>
 <th>Nasal lateral</th>
 <td></td>
 <td></td>
-<td></td>
-<td>ŋǁ
+<td class="no-right-border"></td>
+<td class="no-left-border no-right-border">ŋǁ
 ɴǁ</td>	
-<td></td>
+<td class="no-left-border"></td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 
+
 </tbody>
 </table>
 </section>
-
 
 
 <!-- =======================
@@ -622,7 +631,7 @@ qǁ</td>
 <h2>Vowels</h2>
 
 <div id="vowelQuadrilateral">
-<img src="vowelBackground.png" alt="Vowel chart">
+<img src="https://uploads.onecompiler.io/44amsac8g/44am8vtb9/vowelBackground.png" alt="Vowel chart">
 
 <!-- CLOSE -->
 <span class="ipa-symbol vowel" data-symbol="i" style="right:80%; top:20.5%;"><a title="Close front unrounded vowel">i</a></span>
