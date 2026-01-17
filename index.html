@@ -77,6 +77,18 @@ color: red;
 background: #eaeaea;
 }
 
+td .ipa-symbol + .ipa-symbol {
+  margin-left: 0.8em;
+}
+
+
+td:has(br) {
+  padding-top: 0.8px;
+  padding-bottom: 0.8px;
+}
+
+
+
 /* =======================
   INPUT AREA
 ======================= */
@@ -527,104 +539,140 @@ color: #555;
 bottom: uvular)</th>
 <tr>
 <th>Tenuis</th>
-<td class="no-right-border">kʘ
-qʘ</td>
-<td class="no-left-border"></td>
-<td>kǀ
-qǀ</td>
-<td class="no-right-border">kǃ
-qǃ</td>
-<td class="no-left-border"></td>
-<td>k𝼊
-q𝼊	</td>
-<td>kǂ
-qǂ</td>
-<td class="impossible"></td>
-<td class="impossible"></td>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="kʘ">kʘ</span><br>
+    <span class="ipa-symbol" data-symbol="qʘ">qʘ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="kǀ">kǀ</span><br>
+    <span class="ipa-symbol" data-symbol="qǀ">qǀ</span>
+  </td>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="kǃ">kǃ</span><br>
+    <span class="ipa-symbol" data-symbol="qǃ">qǃ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="k𝼊">k𝼊</span><br>
+    <span class="ipa-symbol" data-symbol="q𝼊">q𝼊</span>
+  </td>
+  <td>
+    <span class="ipa-symbol" data-symbol="kǂ">kǂ</span><br>
+    <span class="ipa-symbol" data-symbol="qǂ">qǂ</span>
+  </td>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
+</tr>
+
+<tr>
+  <th>Voiced</th>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="ɡʘ">ɡʘ</span><br>
+    <span class="ipa-symbol" data-symbol="ɢʘ">ɢʘ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ɡǀ">ɡǀ</span><br>
+    <span class="ipa-symbol" data-symbol="ɢǀ">ɢǀ</span>
+  </td>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="ɡǃ">ɡǃ</span><br>
+    <span class="ipa-symbol" data-symbol="ɢǃ">ɢǃ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ɡ𝼊">ɡ𝼊</span><br>
+    <span class="ipa-symbol" data-symbol="ɢ𝼊">ɢ𝼊</span>
+  </td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ɡǂ">ɡǂ</span><br>
+    <span class="ipa-symbol" data-symbol="ɢǂ">ɢǂ</span>
+  </td>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
 </tr>
 
 
 <tr>
-<th>Voiced</th>
-<td class="no-right-border">ɡʘ
-ɢʘ</td>		
-<td class="no-left-border"></td>
-<td>ɡǀ
-ɢǀ</td>
-<td class="no-right-border">ɡǃ
-ɢǃ</td>
-<td class="no-left-border"></td>
-<td>ɡ𝼊
-ɢ𝼊	</td>
-<td>ɡǂ
-ɢǂ</td>
-<td class="impossible"></td>
-<td class="impossible"></td>
+  <th>Nasal</th>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="ŋʘ">ŋʘ</span><br>
+    <span class="ipa-symbol" data-symbol="ɴʘ">ɴʘ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ŋǀ">ŋǀ</span><br>
+    <span class="ipa-symbol" data-symbol="ɴǀ">ɴǀ</span>
+  </td>
+  <td class="no-right-border">
+    <span class="ipa-symbol" data-symbol="ŋǃ">ŋǃ</span><br>
+    <span class="ipa-symbol" data-symbol="ɴǃ">ɴǃ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ŋ𝼊">ŋ𝼊</span><br>
+    <span class="ipa-symbol" data-symbol="ɴ𝼊">ɴ𝼊</span>
+  </td>
+  <td>
+    <span class="ipa-symbol" data-symbol="ŋǂ">ŋǂ</span><br>
+    <span class="ipa-symbol" data-symbol="ɴǂ">ɴǂ</span>
+  </td>
+  <td class="impossible">
+    <span class="ipa-symbol" data-symbol="ʞ">ʞ</span>
+  </td>
+  <td class="impossible"></td>
+</tr>
+
+
+  <th>Tenuis lateral</th>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
+  <td class="no-right-border"></td>
+  <td class="no-left-border no-right-border">
+    <span class="ipa-symbol" data-symbol="kǁ">kǁ</span><br>
+    <span class="ipa-symbol" data-symbol="qǁ">qǁ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td></td>
+  <td></td>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
 </tr>
 
 
 <tr>
-<th>Nasal</th>
-<td class="no-right-border">ŋʘ
-ɴʘ</td>
-<td class="no-left-border"></td>
-<td>ŋǀ
-ɴǀ</td>
-<td class="no-right-border">ŋǃ
-ɴǃ</td>
-<td class="no-left-border"></td>
-<td>ŋ𝼊
-ɴ𝼊	</td>
-<td>ŋǂ
-ɴǂ</td>
-<td class="impossible">ʞ</td>
-<td class="impossible"></td>
+  <th>Voiced lateral</th>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
+  <td class="no-right-border"></td>
+  <td class="no-left-border no-right-border">
+    <span class="ipa-symbol" data-symbol="ɡǁ">ɡǁ</span><br>
+    <span class="ipa-symbol" data-symbol="ɢǁ">ɢǁ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td></td>
+  <td></td>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
 </tr>
-
 
 <tr>
-<th>Tenuis lateral</th>
-<td class="impossible"></td>
-<td class="impossible"></td>
-<td class="no-right-border"></td>
-<td class="no-left-border no-right-border">kǁ
-qǁ</td>	
-<td class="no-left-border"></td>
-<td></td>
-<td></td>
-<td class="impossible"></td>
-<td class="impossible"></td>
+  <th>Nasal lateral</th>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
+  <td class="no-right-border"></td>
+  <td class="no-left-border no-right-border">
+    <span class="ipa-symbol" data-symbol="ŋǁ">ŋǁ</span><br>
+    <span class="ipa-symbol" data-symbol="ɴǁ">ɴǁ</span>
+  </td>
+  <td class="no-left-border"></td>
+  <td></td>
+  <td></td>
+  <td class="impossible"></td>
+  <td class="impossible"></td>
 </tr>
 
-
-<tr>
-<th>Voiced lateral</th>
-<td class="impossible"></td>
-<td class="impossible"></td>
-<td class="no-right-border"></td>
-<td class="no-left-border no-right-border">ɡǁ
-ɢǁ</td>	
-<td class="no-left-border"></td>
-<td></td>
-<td></td>
-<td class="impossible"></td>
-<td class="impossible"></td>
-</tr>
-
-
-<tr>
-<th>Nasal lateral</th>
-<td class="impossible"></td>
-<td class="impossible"></td>
-<td class="no-right-border"></td>
-<td class="no-left-border no-right-border">ŋǁ
-ɴǁ</td>	
-<td class="no-left-border"></td>
-<td></td>
-<td></td>
-<td class="impossible"></td>
-<td class="impossible"></td>
-</tr>
 
 
 </tbody>
