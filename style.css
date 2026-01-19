@@ -15,16 +15,22 @@ margin-bottom: 30px;
 }
 
 table {
-border-collapse: collapse;
-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; /* clips corners */
 }
 
+
 th, td {
-border: 1px solid #ccc;
+border: 1px solid #ddd;
 padding: 6px;
 text-align: center;
 vertical-align: middle;
 }
+
+
 
 td.no-left-border {
   border-left: 1px solid #ffffff;
@@ -35,10 +41,69 @@ td.no-right-border {
 }
 
 th {
-background: #f4f4f4;
+  background: linear-gradient(
+    to bottom,
+    #fafafa 0%,
+    #e6e6e6 100%
+  );
+  border: 1px solid #ccc;
+  font-weight: bold;
 }
 
 
+
+/* =======================
+   TABLE CORNER ROUNDING
+======================= */
+
+/* Reset all rounding first (important) */
+table th,
+table td {
+  border-radius: 0;
+}
+
+/* ───── TOP CORNERS (thead only) ───── */
+
+table thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+
+table thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* ───── BOTTOM RIGHT (always safe) ───── */
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* ───── DEFAULT BOTTOM LEFT (normal tables) ───── */
+
+table tbody tr:last-child th:first-child,
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+/* ───── OVERRIDE FOR ROWSPAN CORNER CELLS ───── */
+/* Add this class ONLY to the real visual corner cell */
+
+.bottom-left-corner {
+  border-bottom-left-radius: 10px;
+}
+
+/* Cancel the automatic rounding on the fake corner */
+.bottom-left-corner + th,
+.bottom-left-corner ~ th,
+.bottom-left-corner ~ td {
+  border-bottom-left-radius: 0;
+}
+
+
+.nasal-lateral {
+  border-bottom-left-radius: 1px !important;
+  
+}
 
 td.impossible {
 background: #eaeaea;
@@ -55,14 +120,12 @@ background: #eaeaea;
 }
   
 .side-by-side section:last-child {
-  margin-left: auto;
+  margin-left: 90px;
 }
   
-/* Target only the Unicode Symbols section */
-.side-by-side section:last-child table {
-  margin-left: auto;
-  margin-right: 0;
-}
+
+
+
   
 
 /* =======================
@@ -101,6 +164,23 @@ td:has(br) {
   padding-top: 0.2px;
   padding-bottom: 0.2px;
 }
+
+.ipa-symbol {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
+  user-select: none;
+
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ipa-symbol:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 0 1px #ccc inset;
+}
+
 
 
 /* =======================
