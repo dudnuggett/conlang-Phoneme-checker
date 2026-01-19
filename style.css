@@ -51,6 +51,52 @@ th {
 }
 
 
+td.impossible {
+background: #eaeaea;
+}
+
+
+.tables-container {
+  display: flex;
+  align-items: flex-start; /* top-align left and right columns */
+  width: 100%;             /* make container full page width */
+  gap: 20px;               /* optional space between columns if needed */
+}
+
+/* Left column: wide table */
+.left-column {
+  flex: 0 0 auto;  /* shrink to content or a fixed width if desired */
+}
+
+/* Right column: stacked tables aligned right */
+.right-column {
+  flex: 0 0 auto;       /* shrink to content */
+  margin-left: auto;     /* push this column all the way to the right */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;             /* vertical space between stacked tables */
+}
+
+/* Tables in the right column shrink to content */
+.right-column table {
+  width: auto;
+}
+
+
+
+@media (max-width: 900px) {
+  .tables-container {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1 1 100%;
+  }
+}
+
+  
+
 
 /* =======================
    TABLE CORNER ROUNDING
@@ -105,24 +151,7 @@ table tbody tr:last-child td:first-child {
   
 }
 
-td.impossible {
-background: #eaeaea;
-}
 
-.side-by-side {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px; /* space between the two sections */
-}
-
-.side-by-side section {
-  flex: 0 0 auto; /* size to content, not full width */
-}
-  
-.side-by-side section:last-child {
-  margin-left: 90px;
-}
-  
 
 
 
