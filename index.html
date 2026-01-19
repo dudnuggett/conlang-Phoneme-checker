@@ -4,165 +4,10 @@
 <meta charset="UTF-8">
 <title>Conlang IPA Pronunciation Checker</title>
 
-<style>
-/* =======================
-  GLOBAL STYLES
-======================= */
-body {
-font-family: Arial, Helvetica, sans-serif;
-margin: 20px;
-}
-
-h1, h2, h3 {
-margin: 10px 0;
-}
-
-section {
-margin-bottom: 30px;
-}
-
-table {
-border-collapse: collapse;
-width: 100%;
-}
-
-th, td {
-border: 1px solid #ccc;
-padding: 6px;
-text-align: center;
-vertical-align: middle;
-}
-
-td.no-left-border {
-  border-left: 1px solid #ffffff;
-}
-
-td.no-right-border {
-  border-right: 1px solid #ffffff;
-}
-
-th {
-background: #f4f4f4;
-}
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 
 
-
-td.impossible {
-background: #eaeaea;
-}
-
-.side-by-side {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px; /* space between the two sections */
-}
-
-.side-by-side section {
-  flex: 0 0 auto; /* size to content, not full width */
-}
-  
-.side-by-side section:last-child {
-  margin-left: auto;
-}
-  
-/* Target only the Unicode Symbols section */
-.side-by-side section:last-child table {
-  margin-left: auto;
-  margin-right: 0;
-}
-  
-
-/* =======================
-  IPA SYMBOL STATES
-======================= */
-.ipa-symbol {
-cursor: pointer;
-font-size: 20px;
-color: #ccc; /* inactive */
-user-select: none;
-}
-
-.ipa-symbol.active {
-color: #000;
-}
-
-.ipa-symbol.used-active {
-color: #0CC42A;
-}
-
-.ipa-symbol.used-inactive {
-color: red;
-}
-
-.impossible {
-background: #eaeaea;
-}
-
-td .ipa-symbol + .ipa-symbol {
-  margin-left: 0.8em;
-  margin-top: 0.5em;
-}
-
-
-td:has(br) {
-  padding-top: 0.2px;
-  padding-bottom: 0.2px;
-}
-
-
-/* =======================
-  INPUT AREA
-======================= */
-#input-area {
-display: flex;
-gap: 10px;
-align-items: flex-start;
-}
-
-textarea {
-width: 260px;
-height: 120px;
-font-size: 16px;
-}
-
-button {
-height: 40px;
-margin-top: 22px;
-cursor: pointer;
-}
-
-/* =======================
-  VOWELS
-======================= */
-#vowelQuadrilateral {
-position: relative;
-width: 600px;
-margin: 20px auto;
-}
-
-#vowelQuadrilateral img {
-width: 100%;
-}
-
-/* Make vowel symbols larger and responsive.
-   Use clamp(min, preferred, max) so they scale with viewport
-   but don't get too small or too large. Adjust the values
-   (22px / 3.5vw / 40px) to taste. */
-.vowel {
-position: absolute;
-font-size: 25px;
-line-height: 1;
-}
-
-/* =======================
-  FOOTER
-======================= */
-footer {
-margin-top: 40px;
-font-size: 14px;
-color: #555;
-}
-</style>
 </head>
 
 <body>
@@ -876,7 +721,7 @@ bottom: uvular)</th>
 <h2>Vowels</h2>
 
 <div id="vowelQuadrilateral">
-<img src="vowelBackground.png" alt="Vowel chart">
+<img src="https://uploads.onecompiler.io/44amsac8g/44am8vtb9/vowelBackground.png" alt="Vowel chart">
 
 <!-- CLOSE -->
 <span class="ipa-symbol vowel" data-symbol="i" style="right:80%; top:20.5%;"><a title="Close front unrounded vowel">i</a></span>
@@ -947,39 +792,7 @@ bottom: uvular)</th>
 <button id="checkBtn">Check</button>
 </section>
 
-<footer>
-<p>Designed for conlang phonology review • Unicode IPA compliant</p>
-</footer>
-
-<script>
-const ipaSymbols = document.querySelectorAll(".ipa-symbol");
-const checkBtn = document.getElementById("checkBtn");
-const pronunciation = document.getElementById("pronunciation");
-
-ipaSymbols.forEach(sym => {
-sym.addEventListener("click", () => {
-sym.classList.toggle("active");
-});
-});
-
-checkBtn.addEventListener("click", () => {
-const text = pronunciation.value;
-
-ipaSymbols.forEach(sym => {
-sym.classList.remove("used-active", "used-inactive");
-const char = sym.dataset.symbol;
-
-if (text.includes(char)) {
-if (sym.classList.contains("active")) {
-sym.classList.add("used-active");
-} else {
-sym.classList.add("used-inactive");
-}
-}
-});
-});
-</script>
-  
+<!- </script>
   
   
   
@@ -1003,99 +816,12 @@ sym.classList.add("used-inactive");
   <button id="goBtn">Go!</button>
 </div>
 
-<script>
-/* =========================
-   CORE HELPERS
-========================= */
 
-// Return space-separated data-symbol values
-function getSelectedSymbols() {
-  return Array.from(document.querySelectorAll('.ipa-symbol.active'))
-    .map(el => el.dataset.symbol)
-    .join(' ');
-}
-
-// Apply selections from space-separated code
-function selectSymbolsFromCode(code) {
-  // Clear existing selections
-  document.querySelectorAll('.ipa-symbol.active')
-    .forEach(el => el.classList.remove('active'));
-
-  if (!code) return;
-
-  code.trim().split(/\s+/).forEach(sym => {
-    const el = document.querySelector(
-      `.ipa-symbol[data-symbol="${CSS.escape(sym)}"]`
-    );
-    if (el) {
-      el.classList.add('active');
-    }
-  });
-}
-
-/* =========================
-   FILE EXPORT
-========================= */
-
-document.getElementById('exportBtn').addEventListener('click', () => {
-  const code = getSelectedSymbols();
-  if (!code) return;
-
-  const blob = new Blob([code], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'ipa-symbols.txt';
-  document.body.appendChild(a);
-  a.click();
-
-  URL.revokeObjectURL(url);
-  a.remove();
-});
-
-/* =========================
-   FILE IMPORT
-========================= */
-
-document.getElementById('importBtn').addEventListener('click', () => {
-  document.getElementById('fileInput').click();
-});
-
-document.getElementById('fileInput').addEventListener('change', function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = e => {
-    selectSymbolsFromCode(e.target.result);
-  };
-  reader.readAsText(file, 'UTF-8');
-
-  this.value = ''; // allow re-importing same file
-});
-
-/* =========================
-   TEXT EXPORT
-========================= */
-
-document.getElementById('getBtn').addEventListener('click', () => {
-  document.getElementById('symbolsText').value = getSelectedSymbols();
-});
-
-/* =========================
-   TEXT IMPORT
-========================= */
-
-document.getElementById('goBtn').addEventListener('click', () => {
-  const code = document.getElementById('symbolsInput').value;
-  selectSymbolsFromCode(code);
-});
-
-</script>
  
   
-  
+<footer>
+<p>Designed for conlang phonology review • Unicode IPA compliant</p>
+</footer>  
   
   
   
