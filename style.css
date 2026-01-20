@@ -4,14 +4,15 @@
 body {
 font-family: 'Sans-Serif';
 margin: 20px;
+background: rgba(216, 229, 246, 1)
 }
 
 h1, h2, h3 {
 margin: 10px 0;
 font-family: 'Comfortaa';
 font-size: 20px;
-color:white;
-text-shadow:2px 0 0 red,0 2px 0 red,-2px 0 0 red,0 -2px 0 red;
+color:rgb(225, 240, 255);
+text-shadow:2px 2px 0 #6b8fc1,0 2px 2px #6b8fc1,-2px -2px 0 #6b8fc1,2px -2px 2px #6b8fc1;
 }
 
 section {
@@ -20,42 +21,45 @@ margin-bottom: 30px;
 
 table {
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 0 ;
+  Border: 1px solid #85a9d9; 
   table-layout: auto;
   border-radius: 10px;
-  overflow: hidden; /* clips corners */
+  overflow: hidden; 
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4)
 }
 
 
 th, td {
-border: 1px solid #ddd;
+border: 1px solid #a8c8e9;
 padding: 5px;
 text-align: center;
+color:#a8c8e9;
 vertical-align: middle;
 }
 
 
 
 td.no-left-border {
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #a8c8e9;
 }
 
 td.no-right-border {
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #a8c8e9;
 }
 
 th {
-  background: linear-gradient(rgba(102, 102, 102, 0.5) 0%, rgba(69, 69, 69, 0.7) 50.52%, rgba(51, 51, 51, 0.7) 53.12%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(rgba(144, 178, 223,1) 0%, rgba(90, 127, 179,1) 57%, rgba(89, 127, 176,1) 100%);
   );
   font-family: 'Comfortaa';
-  border: 1px solid #ccc;
+  border: 1px solid #4c71a5;
   font-size: 10px
   font-weight: bold;
 }
 
 
 td.impossible {
-background: #eaeaea;
+background: #b5d2f3;
 }
 
 
@@ -73,15 +77,20 @@ background: #eaeaea;
 
 /* Right column: stacked tables aligned right */
 .right-column {
-  flex: 0 0 auto;       /* shrink to content */
+  flex: right;       /* shrink to content */
   margin-left: auto;     /* push this column all the way to the right */
   display: flex;
   flex-direction: column;
+  text-align: right; 
   gap: 20px;             /* vertical space between stacked tables */
 }
 
 /* Tables in the right column shrink to content */
-.right-column table {
+  .right-column table,
+  .right-column img {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 200
   width: auto;
 }
 
@@ -178,14 +187,23 @@ table tbody tr:last-child td:first-child {
   IPA SYMBOL STATES
 ======================= */
 .ipa-symbol {
-cursor: pointer;
-font-size: 20px;
-color: #ccc; /* inactive */
-user-select: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #aecae9;
+  user-select: none;
+
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ipa-symbol:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 0 1px #ccc inset;
 }
 
 .ipa-symbol.active {
-color: #000;
+color: #003781;
 }
 
 .ipa-symbol.used-active {
@@ -194,10 +212,6 @@ color: #0CC42A;
 
 .ipa-symbol.used-inactive {
 color: red;
-}
-
-.impossible {
-background: #eaeaea;
 }
 
 td .ipa-symbol + .ipa-symbol {
@@ -211,21 +225,6 @@ td:has(br) {
   padding-bottom: 0.2px;
 }
 
-.ipa-symbol {
-  cursor: pointer;
-  font-size: 20px;
-  color: #ccc;
-  user-select: none;
-
-  padding: 4px 6px;
-  border-radius: 6px;
-  transition: background-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.ipa-symbol:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 0 0 1px #ccc inset;
-}
 
 
 
@@ -244,23 +243,112 @@ width: 260px;
 height: 120px;
 font-size: 16px;
 margin-top: 10px;
+background-color: #ddecff;
+border-color:#6b8fc1;
+color:#6b8fc1;
+}
+
+input {
+  border-radius: 10px;
+  border: 0.4px solid;
+  border-color: #6b8fc1;
+  background-color: #ddecff;
 }
 
 button {
-background: linear-gradient(rgba(102, 102, 102, 0.5) 0%, rgba(69, 69, 69, 0.7) 50.52%, rgba(51, 51, 51, 0.7) 53.12%, rgba(0, 0, 0, 0.9) 100%);
-height: 40px;
-border-radius: 50px;
-margin-top: 20px;
-cursor: pointer;
-font-family: 'Comfortaa';
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Comfortaa", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.286;
+  text-align: center;
+  color: #1A64AA; /* changed from green to blue */
+  padding: 0.25em 0.75em;
+  margin: 0;
+
+  --bottom-glow: radial-gradient(
+    farthest-corner at bottom center,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+
+  --button-background: hsla(210, 80%, 75%, 0.8); /* light blue */
+  --bg-dark: hsla(210, 51%, 65%, 0.75);           /* darker blue */
+  --button-foreground: hsl(210, 58%, 15%);       /* dark blue text */
+
+  background:
+    var(--bottom-glow),
+    linear-gradient(to bottom, var(--bg-dark), var(--button-background));
+
+  border: 1px solid var(--button-background);
+  border-radius: 9999px;
+
+  box-shadow: 
+    0 0 0 1px rgba(90, 107, 152, 0.5), /* subtle blue glow */
+    0 4px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+  background-clip: padding-box;
+  isolation: isolate;
+
+  transition: all 0.3s ease;
 }
 
+button:hover {
+  --button-background: hsla(200, 70%, 75%, 0.8); /* lighter blue on hover */
+  --bg-dark: hsla(210, 50%, 60%, 0.75);          /* slightly darker hover */
+  --button-foreground: hsl(210, 40%, 15%);       /* text dark blue */
+
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+
+
+button .highlight {
+ position: absolute;
+  top: 3%;
+  left: 0.5em;
+  right: 0.5em;
+  height: 40%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.05)
+  );
+
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+
 .expimp {
-height: 60px;
-width: 90px ;
-border-radius: 50px;
+height: 50px;
+width: 100px ;
+border-radius: 30px;
 font-size: 20px;
 }
+
+.go {
+  height: 30px;
+  border-radius:30px;
+}
+
 
 /* =======================
   VOWELS
@@ -291,5 +379,5 @@ line-height: 1;
 footer {
 margin-top: 40px;
 font-size: 14px;
-color: #555;
+color: #abc9e5;
 }
