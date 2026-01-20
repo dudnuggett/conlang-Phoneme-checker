@@ -7,6 +7,11 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+
 
 </head>
 
@@ -53,8 +58,8 @@
 <!-- NASAL -->
 <tr>
 <th>Nasal</th>
-<td><span class="ipa-symbol" data-symbol="m̥">m̥</span> <span class="ipa-symbol" data-symbol="m">m</span></td>
-<td><span class="ipa-symbol" data-symbol="ɱ̊">ɱ̊</span> <span class="ipa-symbol" data-symbol="ɱ">ɱ</span></td>
+<td><span class="ipa-symbol" data-symbol="m̥"><a title="Voiceless bilabial nasal">m̥</a></span> <span class="ipa-symbol" data-symbol="m"><a title="Voiced bilabial nasal">m</a></span></td>
+<td><span class="ipa-symbol" data-symbol="ɱ̊"><a title="Voiceless labiodental nasal">ɱ̊</a></span> <span class="ipa-symbol" data-symbol="ɱ"><a title="Voiced labiodental nasal">ɱ</a></span></td>
 <td><span class="ipa-symbol" data-symbol="n̼">n̼</span></td>
 <td class="no-right-border"><span class="ipa-symbol" data-symbol="n̪̊">n̪̊</span> <span class="ipa-symbol" data-symbol="n̪">n̪</span></td>
 <td class="no-left-border no-right-border"><span class="ipa-symbol" data-symbol="n̥">n̥</span> <span class="ipa-symbol" data-symbol="n">n</span></td>
@@ -617,7 +622,8 @@ bottom: uvular)</th>
 </tr>
 
 <tr>
-  <th scope="row" rowspan="2">Fricative/approximant</th>
+  <th scope="row" rowspan="2">Fricative/<br>
+  </br>approximant</th>
   <td>
     <span class="ipa-symbol" data-symbol="ʍ">
       <a title="Voiceless labial–velar fricative">ʍ</a>
@@ -808,8 +814,8 @@ bottom: uvular)</th>
   
   
  <div id="ipaExportImport">
-  <button id="exportBtn">Export</button>
-  <button id="importBtn">Import</button>
+  <button class="expimp" id="exportBtn">Export</button>
+  <button class="expimp" id="importBtn">Import</button>
   <input type="file" id="fileInput" accept=".txt" style="display:none">
   <br><br>
   <button id="getBtn">Get Symbols</button><br>
