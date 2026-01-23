@@ -1,6 +1,26 @@
 /* =======================
   GLOBAL STYLES
 ======================= */
+@font-face {
+    font-family: 'bc_alphapipesemibold';
+    src: url('bc_alphapipe_tsb_bold.woff2') format('woff2'),
+         url('bc_alphapipe_tsb_bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'neuropolregular';
+    src: url('neuropol.woff2') format('woff2'),
+         url('neuropol.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 body {
 font-family: 'Sans-Serif';
 margin: 20px;
@@ -9,7 +29,7 @@ background: rgba(216, 229, 246, 1)
 
 h1, h2, h3 {
 margin: 10px 0;
-font-family:  "Fascinate Inline";
+font-family: "neuropolregular";
 font-size: 20px;
 color:#6b8fc1 ;
 }
