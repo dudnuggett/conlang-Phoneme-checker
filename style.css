@@ -27,11 +27,19 @@ margin: 20px;
 background: rgba(216, 229, 246, 1)
 }
 
+title {
+Margin:20px;
+font-family: 'bc_alphapipesemibold';
+font-size: 30px;
+color:#6b8fc1 ;
+}
+
 h1, h2, h3 {
 margin: 10px 0;
 font-family: 'bc_alphapipesemibold';
 font-size: 25px;
 color:#6b8fc1 ;
+
 }
 
 section {
@@ -273,6 +281,29 @@ input {
   border-color: #6b8fc1;
   background-color: #ddecff;
 }
+
+#syllableInput {
+  border-radius: 10px;
+  width: 210px;
+  height: 110px;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #ddecff;
+  border: 2px solid #6b8fc1;
+  color: #6b8fc1;
+  font-family: monospace;
+  padding: 8px;
+  overflow-y: auto;
+  white-space: pre-wrap; /* preserve spaces/newlines */
+}
+
+/* Optional: placeholder for contenteditable */
+#syllableInput:empty::before {
+  content: attr(placeholder);
+  color: #6b8fc1aa; /* lighter shade for placeholder */
+  font-style: italic;
+}
+
 
 button {
   display: inline-block;
