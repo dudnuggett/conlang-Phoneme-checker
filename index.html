@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Conlang IPA Pronunciation Checker</title>
+<title  style="color: #1A64AA;, monospace; font-size: 30px;">
+Conlang IPA Pronunciation Checker</title>
 
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
@@ -732,7 +733,7 @@ bottom: uvular)</th>
 <h2>Vowels</h2>
 
 <div id="vowelQuadrilateral">
-<img src="vowelBackground.png" alt="Vowel chart">
+<img src="https://uploads.onecompiler.io/44amsac8g/44am8vtb9/vowelBackground%20(2).png" alt="Vowel chart">
 
 <!-- CLOSE -->
 <span class="ipa-symbol vowel" data-symbol="i" style="right:79%; top:20.5%;"><a title="Close front unrounded vowel">i</a></span>
@@ -790,32 +791,35 @@ bottom: uvular)</th>
     INPUT AREA
 ======================= -->
 <section id="input-area">
-<div>
-<label>
-  <span style="color: #1A64AA; font-family: 'bc_alphapipesemibold', monospace; font-size: 15px;">
-    Latin box
-  </span>
-</label>
-<br>
-<textarea placeholder="Latin spelling"></textarea>
-</div>
-
-<div>
-<label>
-  <span style="color: #1A64AA; font-family: 'bc_alphapipesemibold', monospace; font-size: 15px;">
-    Pronunciation box
-  </span>
-</label>
-<br>
-<textarea id="pronunciation" placeholder="IPA transcription"></textarea> 
-</div>
+  <div>
+    <label>
+      <span style="color: #1A64AA; font-family: 'bc_alphapipesemibold', monospace; font-size: 15px;">
+        Syllable structure
+      </span>
+    </label>
+    <br>
+    <div id="syllableInput" contenteditable="true" 
+         placeholder="Syllable structure" 
+         style="border: 1px solid #ccc; padding: 8px; min-height: 40px; font-family: monospace;">
+    </div>
+  </div>
   
-<div>
-<br>
-<button id="checkBtn" style="margin-top: 10px">Check<span class="highlight"></span></button>
-</div>
+  <div>
+    <label>
+      <span style="color: #1A64AA; font-family: 'bc_alphapipesemibold', monospace; font-size: 15px;">
+        Pronunciation box
+      </span>
+    </label>
+    <br>
+    <textarea id="pronunciation" placeholder="IPA transcription" style="width: 100%; min-height: 60px;"></textarea> 
+  </div>
 
+  <div>
+    <br>
+    <button id="checkBtn" style="margin-top: 10px">Check<span class="highlight"></span></button>
+  </div>
 </section>
+
 
 
   
@@ -838,7 +842,7 @@ bottom: uvular)</th>
 </div>
 
 
- 
+<footer>In IPA, syllables are generally separated by a period ⟨.⟩, with stress marked before the syllable using a high vertical line ⟨ˈ⟩ for primary and low line ⟨ˌ⟩ for secondary. Each vowel or diphthong marks a new syllable. Syllable breaks often follow the maximum onset principle (e.g., /əˈstrɒn.ə.mɪk.əl/). </footer> 
   
 <footer>
 <p>Designed for conlang phonology review • Unicode IPA compliant</p>
@@ -850,9 +854,3 @@ bottom: uvular)</th>
 
 </body>
 </html>
-
-
-  
-  
-  
-  
