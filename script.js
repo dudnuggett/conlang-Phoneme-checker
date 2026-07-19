@@ -60,25 +60,6 @@ function selectSymbolsFromCode(code) {
   });
 }
 
-const invertBtn = document.getElementById("invertBtn");
-
-invertBtn.addEventListener("click", () => {
-  ipaSymbols.forEach(sym => {
-    sym.classList.toggle("active");
-  });
-});
-
-function setAllSymbolsActive(state) {
-  ipaSymbols.forEach(sym => {
-    if (state) {
-      sym.classList.add("active");
-    } else {
-      sym.classList.remove("active");
-    }
-  });
-}
-
-
 /* =========================
    FILE EXPORT
 ========================= */
