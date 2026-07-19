@@ -9,8 +9,7 @@ sym.classList.toggle("active");
 });
 });
 
-checkBtn.addEventListener("click", () => {
-const text = pronunciation.value;
+
 
 ipaSymbols.forEach(sym => {
 sym.classList.remove("used-active", "used-inactive");
@@ -62,11 +61,14 @@ function selectSymbolsFromCode(code) {
 
 const invertBtn = document.getElementById("invertBtn");
 
-invertBtn.addEventListener("click", () => {
-  ipaSymbols.forEach(sym => {
-    sym.classList.toggle("active");
+if (invertBtn) {
+  invertBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    ipaSymbols.forEach(sym => {
+      sym.classList.toggle("active");
+    });
   });
-});
+}
 
 function setAllSymbolsActive(state) {
   ipaSymbols.forEach(sym => {
