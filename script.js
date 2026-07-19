@@ -12,7 +12,6 @@ sym.classList.toggle("active");
 checkBtn.addEventListener("click", () => {
 const text = pronunciation.value;
 
-
 ipaSymbols.forEach(sym => {
 sym.classList.remove("used-active", "used-inactive");
 const char = sym.dataset.symbol;
@@ -61,6 +60,23 @@ function selectSymbolsFromCode(code) {
   });
 }
 
+const invertBtn = document.getElementById("invertBtn");
+
+invertBtn.addEventListener("click", () => {
+  ipaSymbols.forEach(sym => {
+    sym.classList.toggle("active");
+  });
+});
+
+function setAllSymbolsActive(state) {
+  ipaSymbols.forEach(sym => {
+    if (state) {
+      sym.classList.add("active");
+    } else {
+      sym.classList.remove("active");
+    }
+  });
+}
 
 
 /* =========================
@@ -194,27 +210,4 @@ checkBtn.addEventListener("click", () => {
   // Color the syllable structures
   checkSyllableStructureVisual(text, allowedStructures, syllInputDiv);
 });
-
-
-const invertBtn = document.getElementById("invertBtn");
-
-if (invertBtn) {
-  invertBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    ipaSymbols.forEach(sym => {
-      sym.classList.toggle("active");
-    });
-  });
-}
-
-function setAllSymbolsActive(state) {
-  ipaSymbols.forEach(sym => {
-    if (state) {
-      sym.classList.add("active");
-    } else {
-      sym.classList.remove("active");
-    }
-  });
-}
-
 
