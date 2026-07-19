@@ -9,6 +9,8 @@ sym.classList.toggle("active");
 });
 });
 
+checkBtn.addEventListener("click", () => {
+const text = pronunciation.value;
 
 
 ipaSymbols.forEach(sym => {
