@@ -27,7 +27,13 @@ sym.classList.add("used-inactive");
 });
 
   
+const invertBtn = document.getElementById("invertBtn");
 
+invertBtn.addEventListener("click", () => {
+  ipaSymbols.forEach(sym => {
+    sym.classList.toggle("active");
+  });
+});
 
 
 
