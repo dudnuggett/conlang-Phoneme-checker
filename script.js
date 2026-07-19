@@ -61,26 +61,6 @@ function selectSymbolsFromCode(code) {
   });
 }
 
-const invertBtn = document.getElementById("invertBtn");
-
-if (invertBtn) {
-  invertBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    ipaSymbols.forEach(sym => {
-      sym.classList.toggle("active");
-    });
-  });
-}
-
-function setAllSymbolsActive(state) {
-  ipaSymbols.forEach(sym => {
-    if (state) {
-      sym.classList.add("active");
-    } else {
-      sym.classList.remove("active");
-    }
-  });
-}
 
 
 /* =========================
@@ -214,5 +194,27 @@ checkBtn.addEventListener("click", () => {
   // Color the syllable structures
   checkSyllableStructureVisual(text, allowedStructures, syllInputDiv);
 });
+
+
+const invertBtn = document.getElementById("invertBtn");
+
+if (invertBtn) {
+  invertBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    ipaSymbols.forEach(sym => {
+      sym.classList.toggle("active");
+    });
+  });
+}
+
+function setAllSymbolsActive(state) {
+  ipaSymbols.forEach(sym => {
+    if (state) {
+      sym.classList.add("active");
+    } else {
+      sym.classList.remove("active");
+    }
+  });
+}
 
 
